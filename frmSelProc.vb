@@ -31,10 +31,10 @@ Friend Class frmSelProc
 			'UPGRADE_WARNING: Couldn't resolve default property of object arrRami(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			msCargalstProc(arrRami(0, cboRamif.SelectedIndex))
 			Me.Enabled = True
-			'UPGRADE_ISSUE: Unable to determine which constant to upgrade vbNormal to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
+			'UPGRADE_ISSUE: Unable to determine which constant to upgrade System.Windows.Forms.Cursors.Default to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
 			'UPGRADE_ISSUE: Screen property Screen.MousePointer does not support custom mousepointers. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="45116EAB-7060-405E-8ABE-9DBB40DC2E86"'
 			'UPGRADE_WARNING: Screen property Screen.MousePointer has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
-			System.Windows.Forms.Cursor.Current = vbNormal
+			System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
 		End If
 		
 	End Sub
@@ -118,7 +118,7 @@ Friend Class frmSelProc
 							sSQL = "SELECT NOMBRE FROM USUARIOS WHERE USERID='" & rstAux.Fields("USERID").Value & "'"
 							rstAux2 = mfRecordset(conPasarela, sSQL)
 							MsgBox("El proceso " & rstAux.Fields("NOMBRE_CM").Value & " lo tiene pendiente " & rstAux2.Fields("NOMBRE").Value)
-							'MsgBox "El proceso " & rstAux("NOMBRE_CM") & " est· pendiente "
+							'MsgBox "El proceso " & rstAux("NOMBRE_CM") & " est√° pendiente "
 							blnCorrecto = False
 							Exit For
 						Else
@@ -173,9 +173,9 @@ Friend Class frmSelProc
 						If (rstAux.Fields("NOMBRE_CM").Value = Tree.Nodes.Item(I).Text) Then
 							sSQL = "SELECT NOMBRE FROM USUARIOS WHERE USERID='" & rstAux.Fields("USERID").Value & "'"
 							rstAux2 = mfRecordset(conPasarela, sSQL)
-							MsgBox("El proceso " & rstAux.Fields("NOMBRE_CM").Value & " est· pendiente " & rstAux2.Fields("NOMBRE").Value)
+							MsgBox("El proceso " & rstAux.Fields("NOMBRE_CM").Value & " est√° pendiente " & rstAux2.Fields("NOMBRE").Value)
 							'***********************************************
-							'                  MsgBox "El proceso " & rstAux("NOMBRE_CM") & " est· pendiente "
+							'                  MsgBox "El proceso " & rstAux("NOMBRE_CM") & " est√° pendiente "
 							blnCorrecto = False
 							Exit For
 						Else
@@ -226,7 +226,7 @@ Friend Class frmSelProc
 			Me.Close()
 			frmConf.Show()
 		Else
-			MsgBox("Debe seleccionar alg˙n procedimiento", MsgBoxStyle.Critical)
+			MsgBox("Debe seleccionar alg√∫n procedimiento", MsgBoxStyle.Critical)
 		End If
 		If Not rst2 Is Nothing Then
 			rst2.Close()
@@ -299,11 +299,11 @@ procFin:
 		msCargarGrid()
 		msCargarcboProc()
 		Me.Enabled = True
-		'UPGRADE_ISSUE: Unable to determine which constant to upgrade vbNormal to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
+		'UPGRADE_ISSUE: Unable to determine which constant to upgrade System.Windows.Forms.Cursors.Default to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
 		'UPGRADE_ISSUE: Screen property Screen.MousePointer does not support custom mousepointers. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="45116EAB-7060-405E-8ABE-9DBB40DC2E86"'
 		'UPGRADE_WARNING: Screen property Screen.MousePointer has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
-		System.Windows.Forms.Cursor.Current = vbNormal
-		frmMDI.SysTray.set_TrayTip("SelecciÛn de procedimiento")
+		System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
+		frmMDI.SysTray.set_TrayTip("Selecci√≥n de procedimiento")
 		Me.Tree.Visible = True
 		Me.lstProcP.Visible = False
 		InitTree()
@@ -332,7 +332,7 @@ procFin:
 		Dim strCadenaModelo As String
 		'***************************
 		'Ainhoa 23/11/2007
-		'AÒado un recordset para coger el ID de ANO_TABNR del modelo
+		'A√±ado un recordset para coger el ID de ANO_TABNR del modelo
 		Dim rstIDDiagram As ADODB.Recordset
 		'***************************
 		'UPGRADE_NOTE: Object conDP4 may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
@@ -369,7 +369,7 @@ procFin:
 		colXML2 = New Collection
 		colXML.Add("Grupo Procedimiento")
 		
-		colXML2.Add("CÛdigo Procedimiento")
+		colXML2.Add("C√≥digo Procedimiento")
 		colProcedim = New Collection
 		While Not rstProc.EOF
 			colXMLD = frmProceso.mfBuscaXML("Procedimiento", colXML, rstProc.Fields("ANO_ID").Value, True, True)
@@ -506,7 +506,7 @@ procFin:
 		rstRami = New ADODB.Recordset
 		strSQL = "SELECT A.ANO_ID, A.DI_NAME FROM DIAGRAM A, CW_PROP_TYPE B, CW_LOOKUP C "
 		strSQL = strSQL & "WHERE A.DI_TYPE=C.LU_ID AND B.PPT_ID=C.PPT_ID AND "
-		strSQL = strSQL & "B.PPT_FIELD_NAME = 'DI_TYPE' AND C.LU_NAME = 'RamificaciÛn' "
+		strSQL = strSQL & "B.PPT_FIELD_NAME = 'DI_TYPE' AND C.LU_NAME = 'Ramificaci√≥n' "
 		' **** NUEVO SD ENERO'08
 		strSQL = strSQL & " AND A.MODEL_NAME ='" & strModelo & "'"
 		strSQL = strSQL & " AND B.MODEL_NAME ='" & strModelo & "'"
@@ -708,7 +708,7 @@ procFin:
 		strSQL = strSQL & " AND D.MODEL_NAME ='" & strModelo & "'"
 		rstAux2 = mfRecordset(conDP4, strSQL)
 		While Not rstAux2.EOF
-			If rstAux2.Fields("LU_NAME").Value = "RamificaciÛn" Then
+			If rstAux2.Fields("LU_NAME").Value = "Ramificaci√≥n" Then
 				'UPGRADE_WARNING: Couldn't resolve default property of object mfisRamif. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 				mfisRamif = True
 				rstAux2.Close()
