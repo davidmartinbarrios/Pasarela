@@ -1,0 +1,14 @@
+C:\Temp\Fuentes3\Pasarela.NET\obj\Debug\Interop.MSACAL.dll
+C:\Temp\Fuentes3\Pasarela.NET\obj\Debug\Interop.MSComCtl2.dll
+C:\Temp\Fuentes3\Pasarela.NET\obj\Debug\Interop.MSCommLib.dll
+C:\Temp\Fuentes3\Pasarela.NET\obj\Debug\Interop.MSDASC.dll
+C:\Temp\Fuentes3\Pasarela.NET\obj\Debug\Interop.MSDATASRC.dll
+C:\Temp\Fuentes3\Pasarela.NET\obj\Debug\Interop.MSFlexGridLib.dll
+C:\Temp\Fuentes3\Pasarela.NET\obj\Debug\Interop.MSXML2.dll
+C:\Temp\Fuentes3\Pasarela.NET\obj\Debug\Interop.SysTrayCtl.dll
+C:\Temp\Fuentes3\Pasarela.NET\obj\Debug\AxInterop.MSACAL.dll
+C:\Temp\Fuentes3\Pasarela.NET\obj\Debug\AxInterop.MSComCtl2.dll
+C:\Temp\Fuentes3\Pasarela.NET\obj\Debug\AxInterop.MSCommLib.dll
+C:\Temp\Fuentes3\Pasarela.NET\obj\Debug\AxInterop.MSFlexGridLib.dll
+C:\Temp\Fuentes3\Pasarela.NET\obj\Debug\AxInterop.SysTrayCtl.dll
+C:\Temp\Fuentes3\Pasarela.NET\obj\Debug\Pasarela.vbproj.ResolveComReference.cache
