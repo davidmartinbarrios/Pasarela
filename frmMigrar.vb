@@ -65,14 +65,14 @@ Friend Class frmMigrar
 			'      strFamil = "FP" 'LeeTablaINI("FAMILIAVARIABLES", colRef(cboReferencias.ListIndex + 1))
 			'***** Ainhoa 12/11/2007
 			'Lo vuelvo a dejar como en la version CM8 para que funcione el combo
-			'de Referencias que hemos a馻dido
-			'UPGRADE_WARNING: Couldn't resolve default property of object colRef.Item(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			strTipoReferencia = colRef.Item(cboReferencias.Text)
-			strTipoFamilia = cboReferencias.Text
-			WriteIniFile(INIFile, "REFERENCIA", "FAMILIA", (cboReferencias.Text))
-			strCodEntid = LeeTablaINI("ENTIDAD", (cboReferencias.Text))
-			strCodFamil = LeeTablaINI("FAMILIA", (cboReferencias.Text))
-			strFamil = LeeTablaINI("FAMILIAVARIABLES", (cboReferencias.Text))
+			'UPGRADE_ISSUE: Unable to determine which constant to upgrade System.Windows.Forms.Cursors.Default to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
+			System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
+			'UPGRADE_ISSUE: Unable to determine which constant to upgrade System.Windows.Forms.Cursors.Default to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
+			System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
+			'UPGRADE_ISSUE: Unable to determine which constant to upgrade System.Windows.Forms.Cursors.Default to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
+			System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
+			'UPGRADE_ISSUE: Unable to determine which constant to upgrade System.Windows.Forms.Cursors.Default to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
+			System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
 			lngNombre = CInt(LeeTablaINI("NOMBRE", (cboReferencias.Text)))
 			CodAplicacion = LeeTablaINI("CodAplicacion", (cboReferencias.Text))
 			'Ainhoa 12/11/2007
@@ -88,7 +88,7 @@ Friend Class frmMigrar
 		strCadenaConexion = txtCadena.Text
 		conSqlServer = New ADODB.Connection
 		If ComprobarConexion(conSqlServer, strCadenaConexion) = False Then
-			MsgBox("La cadena de conexi髇 a SQL Server no es correcta o el servidor no se encuentra disponible.")
+			MsgBox("La cadena de conexi贸n a SQL Server no es correcta o el servidor no se encuentra disponible.")
 			'UPGRADE_ISSUE: Unable to determine which constant to upgrade vbNormal to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
 			'UPGRADE_ISSUE: Screen property Screen.MousePointer does not support custom mousepointers. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="45116EAB-7060-405E-8ABE-9DBB40DC2E86"'
 			'UPGRADE_WARNING: Screen property Screen.MousePointer has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
@@ -96,10 +96,10 @@ Friend Class frmMigrar
 			GoTo procFin
 		End If
 		
-		'Inicio Jonathan Prieto 16/05/2013: Obtenemos el c骴igo del Tr醡ite Usuario para el modelo seleccionado
+		'Inicio Jonathan Prieto 16/05/2013: Obtenemos el c贸digo del Tr谩mite Usuario para el modelo seleccionado
 		gstrCodTramUsu = CStr(fObtenerCodigoTramiteUsuario(strModelo))
 		If gstrCodTramUsu = vbNullString Then
-			MsgBox("No se ha podido obtener el c骴igo del Tr醡ite Usuario para el Modelo seleccionado.", MsgBoxStyle.Critical + MsgBoxStyle.OKOnly)
+			MsgBox("No se ha podido obtener el c贸digo del Tr谩mite Usuario para el Modelo seleccionado.", MsgBoxStyle.Critical + MsgBoxStyle.OKOnly)
 			'UPGRADE_ISSUE: Unable to determine which constant to upgrade vbNormal to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
 			'UPGRADE_ISSUE: Screen property Screen.MousePointer does not support custom mousepointers. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="45116EAB-7060-405E-8ABE-9DBB40DC2E86"'
 			'UPGRADE_WARNING: Screen property Screen.MousePointer has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
@@ -146,12 +146,12 @@ procFin:
 		Dim strFamilia As String
 		
 		'Ainhoa 09/10/2007
-		'Para CM8 esto se hac韆 en frmLogin
+		'Para CM8 esto se hac铆a en frmLogin
 		'UPGRADE_WARNING: App property App.EXEName has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
 		INIFile = My.Application.Info.DirectoryPath & "\" & My.Application.Info.AssemblyName & ".ini"
 		conPasarela = New ADODB.Connection
 		If ComprobarConexion(conPasarela, ReadIniFile(INIFile, "PASARELA", "Connection")) = False Then
-			MsgBox("La cadena de conexi髇 a Pasarela no es correcta o el servidor no se encuentra disponible. Revise el fichero INI")
+			MsgBox("La cadena de conexi贸n a Pasarela no es correcta o el servidor no se encuentra disponible. Revise el fichero INI")
 			Me.Enabled = True
 			'UPGRADE_ISSUE: Unable to determine which constant to upgrade vbNormal to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
 			'UPGRADE_ISSUE: Screen property Screen.MousePointer does not support custom mousepointers. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="45116EAB-7060-405E-8ABE-9DBB40DC2E86"'
@@ -162,7 +162,7 @@ procFin:
 		'fin Ainhoa
 		conDP4 = New ADODB.Connection
 		If ComprobarConexion(conDP4, ReadIniFile(INIFile, "SQLMODELO", "Connection")) = False Then
-			MsgBox("La cadena de conexi髇 a Corporate Modeler no es correcta o el servidor no se encuentra disponible. Revise el fichero INI")
+			MsgBox("La cadena de conexi贸n a Corporate Modeler no es correcta o el servidor no se encuentra disponible. Revise el fichero INI")
 			Me.Enabled = True
 			'UPGRADE_ISSUE: Unable to determine which constant to upgrade vbNormal to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
 			'UPGRADE_ISSUE: Screen property Screen.MousePointer does not support custom mousepointers. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="45116EAB-7060-405E-8ABE-9DBB40DC2E86"'

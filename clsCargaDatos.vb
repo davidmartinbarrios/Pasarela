@@ -5,32 +5,32 @@ Friend Class clsCargaDatos
 	'Tipos de objetos
 	Private Const cintTipoObjProceso As Short = 8953
 	
-	'Etiquetas de propiedades de tr·mite
+	'Etiquetas de propiedades de tr√°mite
 	Private Const cstrEtiquetaPropPlazoTipo1 As String = "APLAZOTIPO1"
 	Private Const cstrEtiquetaPropPlazoTipo2 As String = "BPLAZOTIPO2"
-	Private Const cstrEtiquetaPropNivTramit As String = "BNIVELTRAMITACI”N"
+	Private Const cstrEtiquetaPropNivTramit As String = "BNIVELTRAMITACI√ìN"
 	Private Const cstrEtiquetaPropBloqueoExp As String = "DINDICADORBLOQUEOEXPEDIENTE"
-	Private Const cstrEtiquetaPropUnionRamas As String = "EINDICADORUNI”NRAMASPARALELAS"
-	Private Const cstrEtiquetaPropTramSimultanea As String = "GINDICADORTRAMITACI”NSIMULT¡NEA"
-	Private Const cstrEtiquetaPropTramOculto As String = "HTR¡MITEOCULTO"
+	Private Const cstrEtiquetaPropUnionRamas As String = "EINDICADORUNI√ìNRAMASPARALELAS"
+	Private Const cstrEtiquetaPropTramSimultanea As String = "GINDICADORTRAMITACI√ìNSIMULT√ÅNEA"
+	Private Const cstrEtiquetaPropTramOculto As String = "HTR√ÅMITEOCULTO"
 	Private Const cstrEtiquetaPropIndValorVar As String = "AINDICADORVALORVARIABLE"
-	Private Const cstrEtiquetaPropVueltaAtrasURP As String = "GVUELTAATR¡SCONURP"
-	Private Const cstrEtiquetaPropNombreTram As String = "ANOMBRETR¡MITE"
+	Private Const cstrEtiquetaPropVueltaAtrasURP As String = "GVUELTAATR√ÅSCONURP"
+	Private Const cstrEtiquetaPropNombreTram As String = "ANOMBRETR√ÅMITE"
 	
-	'Tipos de datos de propiedades de tr·mite
+	'Tipos de datos de propiedades de tr√°mite
 	Private Const cstrTipoDatoPropNumero As Short = 3
 	Private Const cstrTipoDatoPropTexto As Short = 3
 	Private Const cstrTipoDatoPropCheck As Short = 5
 	Private Const cstrTipoDatoPropLista As Short = 9
 	
-	'Todas las posibles categorÌas de un tr·mite
-	Private Const cstrCategoriasTramite As String = "'Tr·mite de Inicio','Tr·mite','Tr·mite autom·tico','Tr·mite general'" & ",'RamificaciÛn','Tr·mite General Autom·tico'"
+	'Todas las posibles categor√≠as de un tr√°mite
+	Private Const cstrCategoriasTramite As String = "'Tr√°mite de Inicio','Tr√°mite','Tr√°mite autom√°tico','Tr√°mite general'" & ",'Ramificaci√≥n','Tr√°mite General Autom√°tico'"
 	
-	'Todos los campos de la tabla DIAGRAMA, que voy a insertar, necesarios para la validaciÛn
+	'Todos los campos de la tabla DIAGRAMA, que voy a insertar, necesarios para la validaci√≥n
 	Private Const cstrCamposInsertDIAGRAMA As String = "PROCEDIMIENTO,ORDEN_N1,ORDEN_N2,ORDEN_N3,ORDEN_N4,ORDEN_N5" & ",CAT_DIAGRAMA,NOMBRE,USERDEFINED,NIVEL,ARBOL,PLAZOTIPO1,PLAZOTIPO2,NIV_TRAMIT,BLOQUEO_EXP,UNION_RAMAS" & ",TRAMIT_SIMUL,TRAM_OCULTO,IND_VALORVAR,VUELTA_ATRAS,NOMBRE_TRAM"
 	
-	'Todos los tipos de datos de todos los campos de la tabla DIAGRAMA, que voy a insertar, necesarios para la validaciÛn
-	Private Const cstrTipoDatosCamposDIAGRAMA As String = "1,2,2,2,2,2,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1" '1=cadena, 2=n˙mero
+	'Todos los tipos de datos de todos los campos de la tabla DIAGRAMA, que voy a insertar, necesarios para la validaci√≥n
+	Private Const cstrTipoDatosCamposDIAGRAMA As String = "1,2,2,2,2,2,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1" '1=cadena, 2=n√∫mero
 	
 	'Tabla DIAGRAMA
 	Private Const cstrNombreTablaDIAGRAMA As String = "DIAGRAMA"
@@ -49,19 +49,19 @@ Friend Class clsCargaDatos
 	'Diagrama de procedimiento
 	Private cintDiagramaProc As Short
 	
-	'ColecciÛn con todos los registros de la tabla CW_LOOKUP, p˙blica porque se utiliza tambiÈn desde el basValidaciones
+	'Colecci√≥n con todos los registros de la tabla CW_LOOKUP, p√∫blica porque se utiliza tambi√©n desde el basValidaciones
 	Public cColLOOKUP As Collection
 	
 	'--------------------------------------------------------------------------------------
 	'<comment>
-	'<summary>FunciÛn que lanza la carga de tablas de Pasarela</summary>
+	'<summary>Funci√≥n que lanza la carga de tablas de Pasarela</summary>
 	'<param name="intDiagramaProc">ID del diagrama a cargar</param>
 	'<return> Boolean:
 	'&lt;li&gt; True: Se han cargado correctamente los datos
 	'&lt;li&gt; False: No se han podido cargar correctamente los datos
 	'</return>
 	'<remarks>
-	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  CreaciÛn
+	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  Creaci√≥n
 	'</remarks>
 	'</comment>
 	'--------------------------------------------------------------------------------------
@@ -72,7 +72,7 @@ Friend Class clsCargaDatos
 		
 		cintDiagramaProc = intDiagramaProc
 		
-		'Cargo la colecciÛn de LOOKUP
+		'Cargo la colecci√≥n de LOOKUP
 		fCargaColeccionLOOKUP()
 		
 		'Limpio las tablas de Pasarela
@@ -108,7 +108,7 @@ ERROR_Renamed:
 	'<comment>
 	'<summary>Limpia las tablas de Pasarela para el procedimiento tratado</summary>
 	'<remarks>
-	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  CreaciÛn
+	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  Creaci√≥n
 	'</remarks>
 	'</comment>
 	'--------------------------------------------------------------------------------------
@@ -132,7 +132,7 @@ ERROR_Renamed:
 	'--------------------------------------------------------------------------------------
 	'<comment>
 	'<summary>
-	'FunciÛn que lanza la carga la tabla DIAGRAMAS con los datos necesarios para la validaciÛn, que son los siguientes campos:
+	'Funci√≥n que lanza la carga la tabla DIAGRAMAS con los datos necesarios para la validaci√≥n, que son los siguientes campos:
 	'PROCEDIMIENTO, ORDEN_N1, ORDEN_N2, ORDEN_N3, ORDEN_N4, ORDEN_N5, CAT_DIAGRAMA, NOMBRE, USERDEFINED, NIVEL, ARBOL
 	'PLAZOTIPO1, PLAZOTIPO2, NIV_TRAMIT, BLOQUEO_EXP, UNION_RAMAS, TRAMIT_SIMUL, TRAM_OCULTO, IND_VALORVAR
 	'VUELTA_ATRAS y NOMBRE_TRAM
@@ -142,7 +142,7 @@ ERROR_Renamed:
 	'&lt;li&gt; False: No se han podido cargar correctamente los datos
 	'</return>
 	'<remarks>
-	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  CreaciÛn
+	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  Creaci√≥n
 	'</remarks>
 	'</comment>
 	'--------------------------------------------------------------------------------------
@@ -173,13 +173,13 @@ ERROR_Renamed:
 		Dim strDatoIndValorVar As String
 		Dim strDatoVueltaAtrasURP As String
 		Dim strDatoNombreTram As String
-		Dim arrayTramites() As String
+		Dim arrayTramites(,) As String
 		
 		On Error GoTo ERROR_Renamed
 		
-		'Obtenemos por consulta todos los tr·mites/ramificaciones del procedimiento, mas el Nivel, el Arbol, el campo
-		'USERDEFINED (XML), del que extraeremos el resto de datos de propiedades y los campos de Unidades de TramitaciÛn
-		'ID, Tipo y Nombre de la OrganizaciÛn donde est· dibujado
+		'Obtenemos por consulta todos los tr√°mites/ramificaciones del procedimiento, mas el Nivel, el Arbol, el campo
+		'USERDEFINED (XML), del que extraeremos el resto de datos de propiedades y los campos de Unidades de Tramitaci√≥n
+		'ID, Tipo y Nombre de la Organizaci√≥n donde est√° dibujado
 		strSQL = "WITH DirectReports (PDiID, PSeq, DiID, PAnoID, AnoID, Categ, Seq, shy, shx, PrName, UserDefined, Level, ro) AS(" & " SELECT A.DI_ID, A.SH_SEQ, A.DI_ID, NULL , A.Ano_id, d.lu_name,  A.SH_SEQ, A.SH_Y, A.SH_X, B.PR_NAME, B.USERDEFINED, 0 AS Level, CAST(RIGHT('0000'+CAST(a.ANO_ID AS VARCHAR(4)),4) AS VARCHAR(250)) AS ro" & " FROM SHAPE A, PROCESS B, CW_PROP_TYPE C, CW_LOOKUP D" & " WHERE B.PR_TYPE = D.LU_ID AND D.PPT_ID = C.PPT_ID AND C.PPT_FIELD_NAME = 'PR_TYPE' AND D.LU_NAME IN (" & cstrCategoriasTramite & ")" & " AND A.ANO_TABNR=" & cintTipoObjProceso & " AND A.ANO_ID = B.PR_ID AND A.MODEL_NAME = '" & strModelo & "' AND B.MODEL_NAME = '" & strModelo & "' AND C.MODEL_NAME = '" & strModelo & "' AND D.MODEL_NAME = '" & strModelo & "'" & " Union All SELECT DR.PDiid, DR.Seq, E.DI_ID, E.ANO_ID, D.ANO_ID, c.Lu_name, D.SH_SEQ, D.SH_Y, D.SH_X,  A.PR_NAME , A.USERDEFINED, Level + 1, CAST(DR.ro + '-' + RIGHT('0000'+CAST(A.PR_ID AS VARCHAR(4)),4) AS VARCHAR(250)) AS ro" & " FROM PROCESS A INNER JOIN CW_LOOKUP C ON A.PR_TYPE = C.LU_ID AND A.MODEL_NAME = '" & strModelo & "' AND C.MODEL_NAME = '" & strModelo & "'" & " AND C.LU_NAME IN (" & cstrCategoriasTramite & ")" & " INNER JOIN CW_PROP_TYPE B ON B.PPT_ID = C.PPT_ID AND B.PPT_FIELD_NAME = 'PR_TYPE' AND B.MODEL_NAME = '" & strModelo & "'" & " INNER JOIN SHAPE D ON D.ANO_ID = A.PR_ID AND D.MODEL_NAME = '" & strModelo & "' AND D.ANO_TABNR = 8953" & " INNER JOIN DIAGRAM E ON E.DI_ID = D.DI_ID AND E.MODEL_NAME = '" & strModelo & "' AND E.DI_TYPE <> 1 AND E.ANO_TABNR = 8953 AND E.MODEL_NAME = '" & strModelo & "' AND D.ANO_ID <> E.ANO_ID" & " INNER JOIN DirectReports as DR ON E.ANO_ID = DR.AnoID)" & " SELECT row_number() over (order by (select 1))as nro, PDiID, Pseq, DiID, Panoid, AnoID, Categ, Seq, shy, shx, Prname, UserDefined, Level, ro, UT_OuID, UT_OuType, UT_OuName" & " FROM DirectReports dr LEFT OUTER JOIN (SELECT c.DI_ID as UT_DiID, OU_ID as UT_OuID, OU_TYPE as UT_OuType, OU_NAME as UT_OuName, B.PR_ID as UT_PrID, C.SH_SEQ as UT_Seq" & " FROM PROCESS B, SHAPE C, SHAPE D, ORGANIZATION E" & " WHERE B.PR_ID = c.ANO_ID AND C.DI_ID = D.DI_ID AND D.ANO_ID = E.OU_ID AND C.SH_X > D.SH_X AND C.SH_X < D.SH_WIDTH + D.SH_X AND C.SH_Y < D.SH_Y AND C.SH_Y > D.SH_Y - D.SH_HEIGHT AND B.MODEL_NAME = '" & strModelo & "' AND C.MODEL_NAME = '" & strModelo & "' AND D.MODEL_NAME = '" & strModelo & "' AND E.MODEL_NAME = '" & strModelo & "'" & " AND C.ANO_TABNR=" & cintTipoObjProceso & ") UT ON UT_DiID=DiID AND UT_PrID=AnoID AND UT_Seq=Seq" & " WHERE PDiID = " & cintDiagramaProc & " ORDER BY SHY DESC, SHX ASC"
 		rstTramites = mfRecordset(conDP4, strSQL)
 		If Not rstTramites.EOF Then
@@ -187,10 +187,10 @@ ERROR_Renamed:
 			colTramites = New Collection
 			
 			'======================================================================================================================
-			'Recorro todos los tr·mites obtenidos en la consulta, consigo los datos necesarios de propiedades y cargo la colecciÛn
+			'Recorro todos los tr√°mites obtenidos en la consulta, consigo los datos necesarios de propiedades y cargo la colecci√≥n
 			rstTramites.MoveFirst()
 			
-			'Obtengo el mayor ORDEN_N1 para que todos los tr·mites a insertar sean mayores
+			'Obtengo el mayor ORDEN_N1 para que todos los tr√°mites a insertar sean mayores
 			strSQL = "SELECT MAX(ORDEN_N1) FROM DIAGRAMA WHERE PROCEDIMIENTO='" & gNomProcCorto & "'"
 			rstProp = mfRecordset(conPasarela, strSQL)
 			intMax1 = Val(rstProp.Fields(0).Value & "")
@@ -220,29 +220,29 @@ ERROR_Renamed:
 				'                    intMax5 = intMax5 + 1
 				'            End Select
 				
-				'Consigo los datos de las propiedades de cada tr·mite
+				'Consigo los datos de las propiedades de cada tr√°mite
 				'Plazo Tipo 1
 				strDatoPlazoTipo1 = fBuscaDatoXML(rstTramites.Fields(cstrCampoCM_USERDEFINED).Value, cstrEtiquetaPropPlazoTipo1, cstrTipoDatoPropNumero)
 				'Plazo Tipo 2
 				strDatoPlazoTipo2 = fBuscaDatoXML(rstTramites.Fields(cstrCampoCM_USERDEFINED).Value, cstrEtiquetaPropPlazoTipo2, cstrTipoDatoPropNumero)
-				'Nivel TramitaciÛn
+				'Nivel Tramitaci√≥n
 				strDatoNivTramit = fBuscaDatoXML(rstTramites.Fields(cstrCampoCM_USERDEFINED).Value, cstrEtiquetaPropNivTramit, cstrTipoDatoPropNumero)
 				'Bloqueo Expediente
 				strDatoBloqueoExp = fBuscaDatoXML(rstTramites.Fields(cstrCampoCM_USERDEFINED).Value, cstrEtiquetaPropBloqueoExp, cstrTipoDatoPropCheck)
-				'UniÛn Ramas Paralelas
+				'Uni√≥n Ramas Paralelas
 				strDatoUnionRamas = fBuscaDatoXML(rstTramites.Fields(cstrCampoCM_USERDEFINED).Value, cstrEtiquetaPropUnionRamas, cstrTipoDatoPropCheck)
-				'TramitaciÛn Simult·nea
+				'Tramitaci√≥n Simult√°nea
 				strDatoTramSimultanea = fBuscaDatoXML(rstTramites.Fields(cstrCampoCM_USERDEFINED).Value, cstrEtiquetaPropTramSimultanea, cstrTipoDatoPropCheck)
-				'Tr·mite Oculto Consulta
+				'Tr√°mite Oculto Consulta
 				strDatoTramOculto = fBuscaDatoXML(rstTramites.Fields(cstrCampoCM_USERDEFINED).Value, cstrEtiquetaPropTramOculto, cstrTipoDatoPropCheck)
 				'Indicador Valor Variable
 				strDatoIndValorVar = fBuscaDatoXML(rstTramites.Fields(cstrCampoCM_USERDEFINED).Value, cstrEtiquetaPropIndValorVar, cstrTipoDatoPropCheck)
-				'Vuelta atr·s con URP
+				'Vuelta atr√°s con URP
 				strDatoVueltaAtrasURP = fBuscaDatoXML(rstTramites.Fields(cstrCampoCM_USERDEFINED).Value, cstrEtiquetaPropVueltaAtrasURP, cstrTipoDatoPropNumero)
-				'Nombre Tr·mite
+				'Nombre Tr√°mite
 				strDatoNombreTram = fBuscaDatoXML(rstTramites.Fields(cstrCampoCM_USERDEFINED).Value, cstrEtiquetaPropNombreTram, cstrTipoDatoPropLista)
 				
-				'Cargo la colecciÛn de Tr·mites con los datos que necesito
+				'Cargo la colecci√≥n de Tr√°mites con los datos que necesito
 				With tipoTramite
 					.procedimiento = gNomProcCorto
 					.ORDEN_N1 = intMax1
@@ -274,10 +274,10 @@ ERROR_Renamed:
 			End While
 			
 			'======================================================================================================================
-			'Inserto todos los tr·mites, almacenados en la colecciÛn, en la tabla DIAGRAMAS
+			'Inserto todos los tr√°mites, almacenados en la colecci√≥n, en la tabla DIAGRAMAS
 			
 			ReDim arrayTramites(colTramites.Count(), 21)
-			'Genero un array con todos los datos de la colecciÛn porque la funciÛn fCrearInsertSelect lo necesita asÌ
+			'Genero un array con todos los datos de la colecci√≥n porque la funci√≥n fCrearInsertSelect lo necesita as√≠
 			For contTramites = 1 To colTramites.Count()
 				'UPGRADE_WARNING: Couldn't resolve default property of object colTramites().procedimiento. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 				arrayTramites(contTramites, 1) = colTramites.Item(contTramites).procedimiento
@@ -322,7 +322,7 @@ ERROR_Renamed:
 				'UPGRADE_WARNING: Couldn't resolve default property of object colTramites().NOMBRE_TRAM. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 				arrayTramites(contTramites, 21) = colTramites.Item(contTramites).NOMBRE_TRAM
 			Next contTramites
-			'La funciÛn fCrearInsertSelect genera una INSERT SELECT de todos los registros del array
+			'La funci√≥n fCrearInsertSelect genera una INSERT SELECT de todos los registros del array
 			strSQL = fCrearInsertSelect(cstrNombreTablaDIAGRAMA, cstrCamposInsertDIAGRAMA, cstrTipoDatosCamposDIAGRAMA, arrayTramites)
 			If strSQL = "" Then
 				GoTo ERROR_Renamed
@@ -364,15 +364,15 @@ ERROR_Renamed:
 	
 	'--------------------------------------------------------------------------------------
 	'<comment>
-	'<summary>FunciÛn que devuelve el dato de la etiqueta (strEtiqueta) que contiene el campo XML (strCampoXML)</summary>
+	'<summary>Funci√≥n que devuelve el dato de la etiqueta (strEtiqueta) que contiene el campo XML (strCampoXML)</summary>
 	'<param name="strCampoXML">XML en el que se busca</param>
 	'<param name="strEtiqueta">Eqitueta que se busca en el XML</param>
-	'<param name="intTipoDato">Tipo de dato: NumÈrico, Texto, Check Û Lista</param>
+	'<param name="intTipoDato">Tipo de dato: Num√©rico, Texto, Check √≥ Lista</param>
 	'<return> String:
 	'&lt;li&gt; Devuelve el dato contenido en el XML para la etiqueta buscada
 	'</return>
 	'<remarks>
-	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  CreaciÛn
+	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  Creaci√≥n
 	'</remarks>
 	'</comment>
 	'--------------------------------------------------------------------------------------
@@ -396,9 +396,9 @@ ERROR_Renamed:
 			End If
 		Next contEtiquetas
 		
-		'Dependiendo del intTipoDato, tendrÈ que realizar un tratamiento diferente
+		'Dependiendo del intTipoDato, tendr√© que realizar un tratamiento diferente
 		Select Case intTipoDato
-			'NumÈrico
+			'Num√©rico
 			Case cstrTipoDatoPropNumero Or cstrTipoDatoPropTexto
 				fBuscaDatoXML = strDatoXML
 				'Texto
@@ -406,12 +406,12 @@ ERROR_Renamed:
 				fBuscaDatoXML = strDatoXML
 				'Check
 			Case cstrTipoDatoPropCheck
-				'Devuelve S Û N
+				'Devuelve S √≥ N
 				If strDatoXML = "" Or strDatoXML = "0" Then
-					'Si no encuentra el dato Û tiene valor 0 devuelve N
+					'Si no encuentra el dato √≥ tiene valor 0 devuelve N
 					fBuscaDatoXML = "N"
 				ElseIf strDatoXML = "-1" Or strDatoXML = "1" Then 
-					'Si tiene valor -1 Û 1 devuelve S
+					'Si tiene valor -1 √≥ 1 devuelve S
 					fBuscaDatoXML = "S"
 				End If
 				'Lista
@@ -449,15 +449,15 @@ ERROR_Renamed:
 	'--------------------------------------------------------------------------------------
 	'<comment>
 	'<summary>
-	'Carga en una colecciÛn todos los registros de CW_LOOKUP, que mantendr· activo en memoria.
-	'Rellena los ID's para que sean consecutivos y no existan saltos, asÌ un ID ocupar· exactamente la misma
-	'posiciÛn en la colecciÛn, Èsto es, el ID=5 ocupar· la posiciÛn 5 de la colecciÛn (cColLOOKUP(5)(0) y cColLOOKUP(5)(1))
-	'Estructura de la colecciÛn cColLOOKUP:
+	'Carga en una colecci√≥n todos los registros de CW_LOOKUP, que mantendr√° activo en memoria.
+	'Rellena los ID's para que sean consecutivos y no existan saltos, as√≠ un ID ocupar√° exactamente la misma
+	'posici√≥n en la colecci√≥n, √©sto es, el ID=5 ocupar√° la posici√≥n 5 de la colecci√≥n (cColLOOKUP(5)(0) y cColLOOKUP(5)(1))
+	'Estructura de la colecci√≥n cColLOOKUP:
 	'cColLOOKUP(1)(0) = Identificador (LU_ID)
 	'cColLOOKUP(1)(1) = Nombre (LU_NAME)
 	'</summary>
 	'<remarks>
-	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  CreaciÛn
+	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  Creaci√≥n
 	'</remarks>
 	'</comment>
 	'--------------------------------------------------------------------------------------
@@ -474,7 +474,7 @@ ERROR_Renamed:
 		rstLookup = mfRecordset(conDP4, strSQL)
 		If Not rstLookup.EOF Then
 			cColLOOKUP = New Collection
-			'Relleno los ID's que falten, para que la colecciÛn sea consecutiva y sin saltos
+			'Relleno los ID's que falten, para que la colecci√≥n sea consecutiva y sin saltos
 			contColLookup = 1
 			While Not rstLookup.EOF
 				If contColLookup < CShort(rstLookup.Fields(cstrCampoLookup_ID).Value) Then
@@ -494,7 +494,7 @@ ERROR_Renamed:
 		Exit Sub
 		
 ERROR_Renamed: 
-		'Si casca dejo la colecciÛn vacÌa
+		'Si casca dejo la colecci√≥n vac√≠a
 		For contColLookup = 1 To cColLOOKUP.Count()
 			cColLOOKUP.Remove((contColLookup))
 		Next contColLookup
@@ -509,14 +509,14 @@ ERROR_Renamed:
 	'--------------------------------------------------------------------------------------
 	'<comment>
 	'<summary>
-	'Genera una ˙nica instrucciÛn INSERT de todos los registros del array informado. Condiciones:
+	Public Function fCrearInsertSelect(ByVal strTabla As String, ByVal strCampos As String, ByVal strTipoDatosCampos As String, ByRef arrayDatos(,) As String) As String
 	'1) Se le deben informar los campos de la insert en strCampos, con el formato "CAMPO1,CAMPO2,CAMPO3", a modo de cabecera
-	'2) strCampos y arrayDatos (en la segunda dimensiÛn) deben tener el mismo orden de campos
-	'3) Debe coincidir el orden de strCampos y arrayDatos (en la segunda dimensiÛn)
-	'Ej. El dato para el CAMPO5 de strCampos, ser· el que se encuentre en arrayDatos(fila,5)
-	'4) Siempre tratar· el arrayDatos desde base 1
+	'2) strCampos y arrayDatos (en la segunda dimensi√≥n) deben tener el mismo orden de campos
+	'3) Debe coincidir el orden de strCampos y arrayDatos (en la segunda dimensi√≥n)
+	'Ej. El dato para el CAMPO5 de strCampos, ser√° el que se encuentre en arrayDatos(fila,5)
+	'4) Siempre tratar√° el arrayDatos desde base 1
 	'5) strTipoDatosCampos debe tener los tipos de datos para los campos informados, en el mismo orden que strCampos
-	'1: cadena texto, 2: n˙mero
+	'1: cadena texto, 2: n√∫mero
 	'</summary>
 	'<param name="strTabla">Tabla donde se va a ejecutar la INSERT</param>
 	'<param name="strCampos">Campos</param>
@@ -526,7 +526,7 @@ ERROR_Renamed:
 	'&lt;li&gt; Devuelve el dato contenido en el XML para la etiqueta buscada
 	'</return>
 	'<remarks>
-	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  CreaciÛn
+	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  Creaci√≥n
 	'</remarks>
 	'</comment>
 	'--------------------------------------------------------------------------------------
@@ -549,8 +549,8 @@ ERROR_Renamed:
 			GoTo ERROR_Renamed
 		End If
 		
-		arrayCampos = Split(strCampos, ",") 'el arrayTipoDatos tendr· base 0
-		arrayTipoDatos = Split(strTipoDatosCampos, ",") 'el arrayTipoDatos tendr· base 0
+		arrayCampos = Split(strCampos, ",") 'el arrayTipoDatos tendr√° base 0
+		arrayTipoDatos = Split(strTipoDatosCampos, ",") 'el arrayTipoDatos tendr√° base 0
 		
 		If UBound(arrayCampos) = UBound(arrayTipoDatos) And UBound(arrayCampos) + 1 = UBound(arrayDatos, 2) Then
 			
@@ -562,21 +562,21 @@ ERROR_Renamed:
 						Select Case arrayTipoDatos(contCol - 1)
 							Case "1" 'cadena texto
 								strSQL = strSQL & " SELECT '" & arrayDatos(contFila, contCol) & "' AS " & Trim(arrayCampos(contCol - 1))
-							Case "2" 'n˙mero
+							Case "2" 'n√∫mero
 								strSQL = strSQL & " SELECT " & arrayDatos(contFila, contCol) & " AS " & Trim(arrayCampos(contCol - 1))
 						End Select
 					ElseIf contFila > 1 And contCol = 1 Then 
 						Select Case arrayTipoDatos(contCol - 1)
 							Case "1" 'cadena texto
 								strSQL = strSQL & " UNION SELECT '" & arrayDatos(contFila, contCol) & "' AS " & Trim(arrayCampos(contCol - 1))
-							Case "2" 'n˙mero
+							Case "2" 'n√∫mero
 								strSQL = strSQL & " UNION SELECT " & arrayDatos(contFila, contCol) & " AS " & Trim(arrayCampos(contCol - 1))
 						End Select
 					Else
 						Select Case arrayTipoDatos(contCol - 1)
 							Case "1" 'cadena texto
 								strSQL = strSQL & ",'" & arrayDatos(contFila, contCol) & "' AS " & Trim(arrayCampos(contCol - 1))
-							Case "2" 'n˙mero
+							Case "2" 'n√∫mero
 								strSQL = strSQL & "," & arrayDatos(contFila, contCol) & " AS " & Trim(arrayCampos(contCol - 1))
 						End Select
 					End If
@@ -602,13 +602,13 @@ ERROR_Renamed:
 	
 	'--------------------------------------------------------------------------------------
 	'<comment>
-	'<summary>'FunciÛn que lanza la carga la tabla CONECTORES'</summary>
+	'<summary>'Funci√≥n que lanza la carga la tabla CONECTORES'</summary>
 	'<return> Boolean:
 	'&lt;li&gt; True: Se han cargado correctamente los datos
 	'&lt;li&gt; False: No se han podido cargar correctamente los datos
 	'</return>
 	'<remarks>
-	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  CreaciÛn
+	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  Creaci√≥n
 	'</remarks>
 	'</comment>
 	'--------------------------------------------------------------------------------------
@@ -629,13 +629,13 @@ ERROR_Renamed:
 	
 	'--------------------------------------------------------------------------------------
 	'<comment>
-	'<summary>'FunciÛn que lanza la carga la tabla ACCIONES'</summary>
+	'<summary>'Funci√≥n que lanza la carga la tabla ACCIONES'</summary>
 	'<return> Boolean:
 	'&lt;li&gt; True: Se han cargado correctamente los datos
 	'&lt;li&gt; False: No se han podido cargar correctamente los datos
 	'</return>
 	'<remarks>
-	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  CreaciÛn
+	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  Creaci√≥n
 	'</remarks>
 	'</comment>
 	'--------------------------------------------------------------------------------------
@@ -656,13 +656,13 @@ ERROR_Renamed:
 	
 	'--------------------------------------------------------------------------------------
 	'<comment>
-	'<summary>'FunciÛn que lanza la carga la tabla UT'</summary>
+	'<summary>'Funci√≥n que lanza la carga la tabla UT'</summary>
 	'<return> Boolean:
 	'&lt;li&gt; True: Se han cargado correctamente los datos
 	'&lt;li&gt; False: No se han podido cargar correctamente los datos
 	'</return>
 	'<remarks>
-	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  CreaciÛn
+	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  Creaci√≥n
 	'</remarks>
 	'</comment>
 	'--------------------------------------------------------------------------------------
@@ -685,7 +685,7 @@ ERROR_Renamed:
 	'<comment>
 	'<summary>Elimina de memoria las colecciones de datos almacenadas</summary>
 	'<remarks>
-	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  CreaciÛn
+	'&lt;li&gt; 1.0     J. Prieto   07/06/2011  Creaci√≥n
 	'</remarks>
 	'</comment>
 	'--------------------------------------------------------------------------------------
