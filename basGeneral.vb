@@ -100,29 +100,26 @@ Module basGeneral
 	
 	Private Const gintMAX_SIZE As Short = 255 'Maximum buffer size
 	
-	Public Function logError(ByRef Texto As String) As Object
-		
-		On Error Resume Next
-		
-		Dim strBuffer As New System.Text.StringBuilder(255)
-		
-			ReadIniFile = strBuffer.ToString()
-		nFnum = FreeFile
-		FileOpen(nFnum, My.Application.Info.DirectoryPath & "\Traza.log", OpenMode.Append)
-		PrintLine(nFnum, Texto & " #(" & Now & ")#")
-		FileClose(nFnum)
-		
-	End Function
+        Public Sub logError(ByVal Texto As String)
+
+                On Error Resume Next
+
+                Dim nFnum As Integer
+                nFnum = FreeFile()
+                FileOpen(nFnum, My.Application.Info.DirectoryPath & "\Traza.log", OpenMode.Append)
+                PrintLine(nFnum, Texto & " #(" & Now & ")#")
+                FileClose(nFnum)
+
+        End Sub
 	
 	'Lectura de INI
-	Public Function ReadIniFile(ByVal strINIFile As String, ByVal strSection As String, ByVal strKey As String) As String
-		
-		Dim strBuffer As String
-		
-		strBuffer = Space(255)
-		If GetPrivateProfileString(strSection, strKey, vbNullString, strBuffer, gintMAX_SIZE, strINIFile) Then
-			ReadIniFile = StringFromBuffer(strBuffer)
-		End If
+        Public Function ReadIniFile(ByVal strINIFile As String, ByVal strSection As String, ByVal strKey As String) As String
+
+                Dim strBuffer As New System.Text.StringBuilder(255)
+
+                If GetPrivateProfileString(strSection, strKey, vbNullString, strBuffer, gintMAX_SIZE, strINIFile) Then
+                        ReadIniFile = StringFromBuffer(strBuffer.ToString())
+                End If
 		
 	End Function
 	
