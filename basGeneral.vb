@@ -240,9 +240,9 @@ procFin:
 		Dim posicion As Short
 		
 		'#### DS66 Busca texto en la SQL que lanza
-		If InStr(strSQL, "@LETPR_COMPROBACIÃ“NDEUM01") <> 0 Then
-			System.Windows.Forms.Application.DoEvents()
-		End If
+        If InStr(strSQL, "@LETPR_COMPROBACIÓNDEUM01") <> 0 Then
+            System.Windows.Forms.Application.DoEvents()
+        End If
 		'####
 		
 		On Error GoTo procErr
