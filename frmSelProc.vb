@@ -21,10 +21,10 @@ Friend Class frmSelProc
 		
 		If cboRamif.SelectedIndex <> 0 Then
 			colNoProc = New Collection
-			'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.ListItems. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			lstProcP.ListItems.Clear()
+			'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.Items. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+                        lstProcP.Items.Clear()
 			'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			Tree.Nodes.Clear()
+                        Tree.Nodes.Clear()
 			'UPGRADE_WARNING: Screen property Screen.MousePointer has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
 			System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.WaitCursor
 			Me.Enabled = False
@@ -34,7 +34,7 @@ Friend Class frmSelProc
 			'UPGRADE_ISSUE: Unable to determine which constant to upgrade vbNormal to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
 			'UPGRADE_ISSUE: Screen property Screen.MousePointer does not support custom mousepointers. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="45116EAB-7060-405E-8ABE-9DBB40DC2E86"'
 			'UPGRADE_WARNING: Screen property Screen.MousePointer has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
-			System.Windows.Forms.Cursor.Current = vbNormal
+                    System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
 		End If
 		
 	End Sub
@@ -46,8 +46,8 @@ Friend Class frmSelProc
 			bTree = False
 			Me.Tree.Visible = False
 			Me.lstProcP.Visible = True
-			'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.ListItems. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			lstProcP.ListItems.Clear()
+			'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.Items. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+			lstProcP.Items.Clear()
 			'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			Tree.Nodes.Clear()
 			Me.cboRamif.Enabled = True
@@ -59,8 +59,8 @@ Friend Class frmSelProc
 			Me.lstProcP.Visible = False
 			Me.cboRamif.Items.Clear()
 			Me.cboRamif.Enabled = False
-			'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.ListItems. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			lstProcP.ListItems.Clear()
+			'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.Items. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+			lstProcP.Items.Clear()
 			'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			Tree.Nodes.Clear()
 			msCargarcboProc()
@@ -104,21 +104,21 @@ Friend Class frmSelProc
 		rstAux = mfRecordset(conPasarela, sSQL)
 		If bTree = False Then
 			blnCorrecto = True
-			'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.ListItems. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			For I = 1 To lstProcP.ListItems.Count
-				'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.ListItems. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				If lstProcP.ListItems(I).Checked = True And lstProcP.ListItems(I).ForeColor <> System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red) Then
+			'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.Items. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+			For I = 1 To lstProcP.Items.Count
+				'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.Items. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+				If lstProcP.Items(I - 1).Checked = True And lstProcP.Items(I - 1).ForeColor <> System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red) Then
 					'----- comprobamos que no los este usando otro usuario (Aketza)
 					If rstAux.RecordCount > 0 Then
 						rstAux.MoveFirst()
 					End If
 					For j = 1 To rstAux.RecordCount '-1
-						'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.ListItems. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						If (rstAux.Fields("NOMBRE_CM").Value = lstProcP.ListItems(I).Text) Then
+						'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.Items. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+						If (rstAux.Fields("NOMBRE_CM").Value = lstProcP.Items(I - 1).Text) Then
 							sSQL = "SELECT NOMBRE FROM USUARIOS WHERE USERID='" & rstAux.Fields("USERID").Value & "'"
 							rstAux2 = mfRecordset(conPasarela, sSQL)
 							MsgBox("El proceso " & rstAux.Fields("NOMBRE_CM").Value & " lo tiene pendiente " & rstAux2.Fields("NOMBRE").Value)
-							'MsgBox "El proceso " & rstAux("NOMBRE_CM") & " está pendiente "
+							'MsgBox "El proceso " & rstAux("NOMBRE_CM") & " estÃ¡ pendiente "
 							blnCorrecto = False
 							Exit For
 						Else
@@ -129,7 +129,7 @@ Friend Class frmSelProc
 					If blnCorrecto = True Then
 						'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim()(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						sSQL = "SELECT * FROM PROCEDIMIENTOS WHERE CODEXTPR='" & colProcedim.Item(Tree.Nodes.Item(I).Key)(3) & "'"
+						sSQL = "SELECT * FROM PROCEDIMIENTOS WHERE CODEXTPR='" & colProcedim.Item(Tree.Nodes(I - 1).Key)(3) & "'"
 						rst2 = mfRecordset(conInfra, sSQL)
 						If rst2.RecordCount > 0 Then
 							strConV_Renamed = ReadIniFile(INIFile, Trim(rst2.Fields("BASEDATOS").Value), "Connection")
@@ -142,17 +142,17 @@ Friend Class frmSelProc
 						sSQL = "INSERT INTO PROCESOS_PENDIENTES (PROCEDIMIENTO,ID,NOMBRE_CM, FECHA_ACTIVACION,NUEVA_VERSION,"
 						sSQL = sSQL & "CONEXION, FINALIZADO,USERID,BASEDATOS, GRUPO) VALUES "
 						'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim(Tree.Nodes.Item(I).Key)(1). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim(Tree.Nodes.Item(I).Key)(0). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim(Tree.Nodes(I - 1).Key)(1). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim(Tree.Nodes(I - 1).Key)(0). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim()(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						sSQL = sSQL & "('" & colProcedim.Item(Tree.Nodes.Item(I).Key)(3) & "'," & colProcedim.Item(Tree.Nodes.Item(I).Key)(0) & ", '" & colProcedim.Item(Tree.Nodes.Item(I).Key)(1) & "',"
+						sSQL = sSQL & "('" & colProcedim.Item(Tree.Nodes(I - 1).Key)(3) & "'," & colProcedim.Item(Tree.Nodes(I - 1).Key)(0) & ", '" & colProcedim.Item(Tree.Nodes(I - 1).Key)(1) & "',"
 						'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim(Tree.Nodes.Item(I).Key)(2). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						sSQL = sSQL & "'" & VB6.Format(Today, "DD/MM/YYYY") & "','0', '" & strConV_Renamed & "','N','" & strUserId & "','" & strBaseDatos & "', '" & colProcedim.Item(Tree.Nodes.Item(I).Key)(2) & "')"
+						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim(Tree.Nodes(I - 1).Key)(2). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+						sSQL = sSQL & "'" & VB6.Format(Today, "DD/MM/YYYY") & "','0', '" & strConV_Renamed & "','N','" & strUserId & "','" & strBaseDatos & "', '" & colProcedim.Item(Tree.Nodes(I - 1).Key)(2) & "')"
 						'               sSQL = "INSERT INTO PROCESOS_PENDIENTES (PROCEDIMIENTO,ID,NOMBRE_CM, FECHA_ACTIVACION,NUEVA_VERSION,"
 						'               sSQL = sSQL & "CONEXION, FINALIZADO,BASEDATOS, GRUPO) VALUES "
-						'               sSQL = sSQL & "('" & colProcedim(Tree.Nodes.Item(I).Key)(3) & "'," & colProcedim(Tree.Nodes.Item(I).Key)(0) & ", '" & colProcedim(Tree.Nodes.Item(I).Key)(1) & "',"
-						'               sSQL = sSQL & "'" & Format(Date, "DD/MM/YYYY") & "','0', '" & strConV & "','N','" & strBaseDatos & "', '" & colProcedim(Tree.Nodes.Item(I).Key)(2) & "')"
+						'               sSQL = sSQL & "('" & colProcedim(Tree.Nodes(I - 1).Key)(3) & "'," & colProcedim(Tree.Nodes(I - 1).Key)(0) & ", '" & colProcedim(Tree.Nodes(I - 1).Key)(1) & "',"
+						'               sSQL = sSQL & "'" & Format(Date, "DD/MM/YYYY") & "','0', '" & strConV & "','N','" & strBaseDatos & "', '" & colProcedim(Tree.Nodes(I - 1).Key)(2) & "')"
 						mfExecute(conPasarela, sSQL)
 						'***************************
 					End If
@@ -163,19 +163,19 @@ Friend Class frmSelProc
 			'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			For I = 1 To Tree.Nodes.Count
 				'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				If Tree.Nodes.Item(I).Checked = True And Mid(Tree.Nodes.Item(I).Key, 1, 1) <> "F" And Tree.Nodes.Item(I).ForeColor <> System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red) Then
+				If Tree.Nodes(I - 1).Checked = True And Mid(Tree.Nodes(I - 1).Key, 1, 1) <> "F" And Tree.Nodes(I - 1).ForeColor <> System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red) Then
 					'----- comprobamos que no los este usando otro usuario (Aketza)
 					If rstAux.RecordCount > 0 Then
 						rstAux.MoveFirst()
 					End If
 					For j = 1 To rstAux.RecordCount '-1
 						'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						If (rstAux.Fields("NOMBRE_CM").Value = Tree.Nodes.Item(I).Text) Then
+						If (rstAux.Fields("NOMBRE_CM").Value = Tree.Nodes(I - 1).Text) Then
 							sSQL = "SELECT NOMBRE FROM USUARIOS WHERE USERID='" & rstAux.Fields("USERID").Value & "'"
 							rstAux2 = mfRecordset(conPasarela, sSQL)
-							MsgBox("El proceso " & rstAux.Fields("NOMBRE_CM").Value & " está pendiente " & rstAux2.Fields("NOMBRE").Value)
+							MsgBox("El proceso " & rstAux.Fields("NOMBRE_CM").Value & " estÃ¡ pendiente " & rstAux2.Fields("NOMBRE").Value)
 							'***********************************************
-							'                  MsgBox "El proceso " & rstAux("NOMBRE_CM") & " está pendiente "
+							'                  MsgBox "El proceso " & rstAux("NOMBRE_CM") & " estÃ¡ pendiente "
 							blnCorrecto = False
 							Exit For
 						Else
@@ -186,7 +186,7 @@ Friend Class frmSelProc
 					If blnCorrecto = True Then
 						'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim()(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						sSQL = "SELECT * FROM PROCEDIMIENTOS WHERE CODEXTPR='" & colProcedim.Item(Tree.Nodes.Item(I).Key)(3) & "'"
+						sSQL = "SELECT * FROM PROCEDIMIENTOS WHERE CODEXTPR='" & colProcedim.Item(Tree.Nodes(I - 1).Key)(3) & "'"
 						rst2 = mfRecordset(conInfra, sSQL)
 						If rst2.RecordCount > 0 Then
 							strConV_Renamed = ReadIniFile(INIFile, Trim(rst2.Fields("BASEDATOS").Value), "Connection")
@@ -199,17 +199,17 @@ Friend Class frmSelProc
 						sSQL = "INSERT INTO PROCESOS_PENDIENTES (PROCEDIMIENTO,ID,NOMBRE_CM, FECHA_ACTIVACION,NUEVA_VERSION,"
 						sSQL = sSQL & "CONEXION, FINALIZADO,USERID,BASEDATOS, GRUPO) VALUES "
 						'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim(Tree.Nodes.Item(I).Key)(1). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim(Tree.Nodes.Item(I).Key)(0). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim(Tree.Nodes(I - 1).Key)(1). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim(Tree.Nodes(I - 1).Key)(0). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim()(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						sSQL = sSQL & "('" & colProcedim.Item(Tree.Nodes.Item(I).Key)(3) & "'," & colProcedim.Item(Tree.Nodes.Item(I).Key)(0) & ", '" & colProcedim.Item(Tree.Nodes.Item(I).Key)(1) & "',"
+						sSQL = sSQL & "('" & colProcedim.Item(Tree.Nodes(I - 1).Key)(3) & "'," & colProcedim.Item(Tree.Nodes(I - 1).Key)(0) & ", '" & colProcedim.Item(Tree.Nodes(I - 1).Key)(1) & "',"
 						'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim(Tree.Nodes.Item(I).Key)(2). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						sSQL = sSQL & "'" & VB6.Format(Today, "DD/MM/YYYY") & "','0', '" & strConV_Renamed & "','N','" & strUserId & "','" & strBaseDatos & "', '" & colProcedim.Item(Tree.Nodes.Item(I).Key)(2) & "')"
+						'UPGRADE_WARNING: Couldn't resolve default property of object colProcedim(Tree.Nodes(I - 1).Key)(2). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+						sSQL = sSQL & "'" & VB6.Format(Today, "DD/MM/YYYY") & "','0', '" & strConV_Renamed & "','N','" & strUserId & "','" & strBaseDatos & "', '" & colProcedim.Item(Tree.Nodes(I - 1).Key)(2) & "')"
 						'               sSQL = "INSERT INTO PROCESOS_PENDIENTES (PROCEDIMIENTO,ID,NOMBRE_CM, FECHA_ACTIVACION,NUEVA_VERSION,"
 						'               sSQL = sSQL & "CONEXION, FINALIZADO,BASEDATOS, GRUPO, USERID) VALUES "
-						'               sSQL = sSQL & "('" & colProcedim(Tree.Nodes.Item(I).Key)(3) & "'," & colProcedim(Tree.Nodes.Item(I).Key)(0) & ", '" & colProcedim(Tree.Nodes.Item(I).Key)(1) & "',"
-						'               sSQL = sSQL & "'" & Format(Date, "DD/MM/YYYY") & "','0', '" & strConV & "','N','" & strBaseDatos & "', '" & colProcedim(Tree.Nodes.Item(I).Key)(2) & "', '')"
+						'               sSQL = sSQL & "('" & colProcedim(Tree.Nodes(I - 1).Key)(3) & "'," & colProcedim(Tree.Nodes(I - 1).Key)(0) & ", '" & colProcedim(Tree.Nodes(I - 1).Key)(1) & "',"
+						'               sSQL = sSQL & "'" & Format(Date, "DD/MM/YYYY") & "','0', '" & strConV & "','N','" & strBaseDatos & "', '" & colProcedim(Tree.Nodes(I - 1).Key)(2) & "', '')"
 						'*****************************************
 						mfExecute(conPasarela, sSQL)
 					End If
@@ -226,7 +226,7 @@ Friend Class frmSelProc
 			Me.Close()
 			frmConf.Show()
 		Else
-			MsgBox("Debe seleccionar algún procedimiento", MsgBoxStyle.Critical)
+			MsgBox("Debe seleccionar algÃºn procedimiento", MsgBoxStyle.Critical)
 		End If
 		If Not rst2 Is Nothing Then
 			rst2.Close()
@@ -302,8 +302,8 @@ procFin:
 		'UPGRADE_ISSUE: Unable to determine which constant to upgrade vbNormal to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
 		'UPGRADE_ISSUE: Screen property Screen.MousePointer does not support custom mousepointers. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="45116EAB-7060-405E-8ABE-9DBB40DC2E86"'
 		'UPGRADE_WARNING: Screen property Screen.MousePointer has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
-		System.Windows.Forms.Cursor.Current = vbNormal
-		frmMDI.SysTray.set_TrayTip("Selección de procedimiento")
+            System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
+		frmMDI.SysTray.set_TrayTip("SelecciÃ³n de procedimiento")
 		Me.Tree.Visible = True
 		Me.lstProcP.Visible = False
 		InitTree()
@@ -332,7 +332,7 @@ procFin:
 		Dim strCadenaModelo As String
 		'***************************
 		'Ainhoa 23/11/2007
-		'Añado un recordset para coger el ID de ANO_TABNR del modelo
+		'AÃ±ado un recordset para coger el ID de ANO_TABNR del modelo
 		Dim rstIDDiagram As ADODB.Recordset
 		'***************************
 		'UPGRADE_NOTE: Object conDP4 may not be destroyed until it is garbage collected. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6E35BFF6-CD74-4B09-9689-3E1A43DF8969"'
@@ -369,7 +369,7 @@ procFin:
 		colXML2 = New Collection
 		colXML.Add("Grupo Procedimiento")
 		
-		colXML2.Add("Código Procedimiento")
+		colXML2.Add("CÃ³digo Procedimiento")
 		colProcedim = New Collection
 		While Not rstProc.EOF
 			colXMLD = frmProceso.mfBuscaXML("Procedimiento", colXML, rstProc.Fields("ANO_ID").Value, True, True)
@@ -416,7 +416,7 @@ procFin:
 						'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 						For P = 1 To Tree.Nodes.Count
 							'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-							If Tree.Nodes.Item(P).Text = "Grupo " & Grupo Then
+							If Tree.Nodes(P - 1).Text = "Grupo " & Grupo Then
 								System.Windows.Forms.Application.DoEvents()
 								GoTo Err_Renamed
 							End If
@@ -506,7 +506,7 @@ procFin:
 		rstRami = New ADODB.Recordset
 		strSQL = "SELECT A.ANO_ID, A.DI_NAME FROM DIAGRAM A, CW_PROP_TYPE B, CW_LOOKUP C "
 		strSQL = strSQL & "WHERE A.DI_TYPE=C.LU_ID AND B.PPT_ID=C.PPT_ID AND "
-		strSQL = strSQL & "B.PPT_FIELD_NAME = 'DI_TYPE' AND C.LU_NAME = 'Ramificación' "
+		strSQL = strSQL & "B.PPT_FIELD_NAME = 'DI_TYPE' AND C.LU_NAME = 'RamificaciÃ³n' "
 		' **** NUEVO SD ENERO'08
 		strSQL = strSQL & " AND A.MODEL_NAME ='" & strModelo & "'"
 		strSQL = strSQL & " AND B.MODEL_NAME ='" & strModelo & "'"
@@ -599,11 +599,11 @@ procFin:
 		For	Each icol In colID
 			I = I + 1
 			'UPGRADE_WARNING: Couldn't resolve default property of object icol(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.ListItems. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			lstProcP.ListItems.Add( ,  , CStr(icol(1)))
-			'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.ListItems. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+			'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.Items. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+			lstProcP.Items.Add( ,  , CStr(icol(1)))
+			'UPGRADE_WARNING: Couldn't resolve default property of object lstProcP.Items. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			'UPGRADE_WARNING: Couldn't resolve default property of object icol(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			lstProcP.ListItems.Item(lstProcP.ListItems.Count).SubItems(1) = icol(0)
+			lstProcP.Items(lstProcP.Items.Count - 1).SubItems(1) = icol(0)
 			'UPGRADE_WARNING: Couldn't resolve default property of object icol(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			'UPGRADE_WARNING: Couldn't resolve default property of object arrProc2(0, I). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			arrProc2(0, I) = icol(0)
@@ -708,7 +708,7 @@ procFin:
 		strSQL = strSQL & " AND D.MODEL_NAME ='" & strModelo & "'"
 		rstAux2 = mfRecordset(conDP4, strSQL)
 		While Not rstAux2.EOF
-			If rstAux2.Fields("LU_NAME").Value = "Ramificación" Then
+			If rstAux2.Fields("LU_NAME").Value = "RamificaciÃ³n" Then
 				'UPGRADE_WARNING: Couldn't resolve default property of object mfisRamif. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 				mfisRamif = True
 				rstAux2.Close()
@@ -841,9 +841,9 @@ msformateargrid:
 			If Node.Checked = True Then
 				j = Node.Index + 1
 				'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				Do While Mid(Tree.Nodes.Item(j).Key, 1, 1) = "P"
+				Do While Mid(Tree.Nodes(j - 1).Key, 1, 1) = "P"
 					'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					Tree.Nodes.Item(j).Checked = True
+					Tree.Nodes(j - 1).Checked = True
 					j = j + 1
 					'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 					If j > Tree.Nodes.Count Then
@@ -853,9 +853,9 @@ msformateargrid:
 			Else
 				j = Node.Index + 1
 				'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				Do While Mid(Tree.Nodes.Item(j).Key, 1, 1) = "P"
+				Do While Mid(Tree.Nodes(j - 1).Key, 1, 1) = "P"
 					'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					Tree.Nodes.Item(j).Checked = False
+					Tree.Nodes(j - 1).Checked = False
 					j = j + 1
 					'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 					If j > Tree.Nodes.Count Then
@@ -868,9 +868,9 @@ msformateargrid:
 				'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 				For j = 1 To Tree.Nodes.Count
 					'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					If Mid(Tree.Nodes.Item(j).Key, 2, 2) = Mid(Node.Text, 2, 2) And Mid(Tree.Nodes.Item(j).Key, 1, 1) = "F" Then
+					If Mid(Tree.Nodes(j - 1).Key, 2, 2) = Mid(Node.Text, 2, 2) And Mid(Tree.Nodes(j - 1).Key, 1, 1) = "F" Then
 						'UPGRADE_WARNING: Couldn't resolve default property of object Tree.Nodes. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						Tree.Nodes.Item(j).Checked = False
+						Tree.Nodes(j - 1).Checked = False
 					End If
 				Next j
 			End If

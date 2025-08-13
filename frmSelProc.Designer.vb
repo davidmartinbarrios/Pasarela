@@ -29,9 +29,9 @@
 	Public WithEvents cmdCancelar As System.Windows.Forms.Button
 	Public WithEvents chkRamif As System.Windows.Forms.CheckBox
 	Public WithEvents fgrProcs As AxMSFlexGridLib.AxMSFlexGrid
-	Public WithEvents Tree As System.Windows.Forms.PictureBox
-	Public WithEvents lstProcP As System.Windows.Forms.PictureBox
-	Public WithEvents Images As System.Windows.Forms.PictureBox
+        Public WithEvents Tree As System.Windows.Forms.TreeView
+        Public WithEvents lstProcP As System.Windows.Forms.ListView
+        Public WithEvents Images As System.Windows.Forms.PictureBox
 	Public WithEvents _Label1_0 As System.Windows.Forms.Label
 	Public WithEvents _Label1_2 As System.Windows.Forms.Label
 	Public WithEvents Label1 As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
@@ -47,9 +47,9 @@
 		Me.cmdCancelar = New System.Windows.Forms.Button
 		Me.chkRamif = New System.Windows.Forms.CheckBox
 		Me.fgrProcs = New AxMSFlexGridLib.AxMSFlexGrid
-		Me.Tree = New System.Windows.Forms.PictureBox
-		Me.lstProcP = New System.Windows.Forms.PictureBox
-		Me.Images = New System.Windows.Forms.PictureBox
+                Me.Tree = New System.Windows.Forms.TreeView
+                Me.lstProcP = New System.Windows.Forms.ListView
+                Me.Images = New System.Windows.Forms.PictureBox
 		Me._Label1_0 = New System.Windows.Forms.Label
 		Me._Label1_2 = New System.Windows.Forms.Label
 		Me.Label1 = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(components)
@@ -58,7 +58,7 @@
 		CType(Me.fgrProcs, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-		Me.Text = "Selección de Procedimiento"
+		Me.Text = "SelecciÃ³n de Procedimiento"
 		Me.ClientSize = New System.Drawing.Size(619, 553)
 		Me.Location = New System.Drawing.Point(0, 0)
 		Me.Icon = CType(resources.GetObject("frmSelProc.Icon"), System.Drawing.Icon)
@@ -120,7 +120,7 @@
 		Me.cmdCancelar.RightToLeft = System.Windows.Forms.RightToLeft.No
 		Me.cmdCancelar.TabStop = True
 		Me.cmdCancelar.Name = "cmdCancelar"
-		Me.chkRamif.Text = "Buscar por ramificación"
+		Me.chkRamif.Text = "Buscar por ramificaciÃ³n"
 		Me.chkRamif.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.chkRamif.Size = New System.Drawing.Size(145, 23)
 		Me.chkRamif.Location = New System.Drawing.Point(10, 8)
@@ -143,37 +143,21 @@
 		Me.fgrProcs.Location = New System.Drawing.Point(10, 328)
 		Me.fgrProcs.TabIndex = 5
 		Me.fgrProcs.Name = "fgrProcs"
-		Me.Tree.Size = New System.Drawing.Size(601, 207)
-		Me.Tree.Location = New System.Drawing.Point(10, 88)
-		Me.Tree.TabIndex = 7
-		Me.Tree.Dock = System.Windows.Forms.DockStyle.None
-		Me.Tree.BackColor = System.Drawing.SystemColors.Control
-		Me.Tree.CausesValidation = True
-		Me.Tree.Enabled = True
-		Me.Tree.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.Tree.Cursor = System.Windows.Forms.Cursors.Default
-		Me.Tree.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.Tree.TabStop = True
-		Me.Tree.Visible = True
-		Me.Tree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal
-		Me.Tree.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.Tree.Name = "Tree"
-		Me.lstProcP.BackColor = System.Drawing.SystemColors.Window
-		Me.lstProcP.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.lstProcP.ForeColor = System.Drawing.SystemColors.WindowText
-		Me.lstProcP.Size = New System.Drawing.Size(601, 207)
-		Me.lstProcP.Location = New System.Drawing.Point(10, 88)
-		Me.lstProcP.TabIndex = 8
-		Me.lstProcP.Dock = System.Windows.Forms.DockStyle.None
-		Me.lstProcP.CausesValidation = True
-		Me.lstProcP.Enabled = True
-		Me.lstProcP.Cursor = System.Windows.Forms.Cursors.Default
-		Me.lstProcP.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.lstProcP.TabStop = True
-		Me.lstProcP.Visible = True
-		Me.lstProcP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal
-		Me.lstProcP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.lstProcP.Name = "lstProcP"
+                Me.Tree.Size = New System.Drawing.Size(601, 207)
+                Me.Tree.Location = New System.Drawing.Point(10, 88)
+                Me.Tree.TabIndex = 7
+                Me.Tree.Dock = System.Windows.Forms.DockStyle.None
+                Me.Tree.HideSelection = False
+                Me.Tree.Name = "Tree"
+                Me.lstProcP.BackColor = System.Drawing.SystemColors.Window
+                Me.lstProcP.ForeColor = System.Drawing.SystemColors.WindowText
+                Me.lstProcP.Size = New System.Drawing.Size(601, 207)
+                Me.lstProcP.Location = New System.Drawing.Point(10, 88)
+                Me.lstProcP.TabIndex = 8
+                Me.lstProcP.Dock = System.Windows.Forms.DockStyle.None
+                Me.lstProcP.HideSelection = False
+                Me.lstProcP.View = System.Windows.Forms.View.Details
+                Me.lstProcP.Name = "lstProcP"
 		Me.Images.BackColor = System.Drawing.SystemColors.Window
 		Me.Images.Size = New System.Drawing.Size(80, 32)
 		Me.Images.Location = New System.Drawing.Point(456, 0)

@@ -135,7 +135,7 @@ procFin:
 		'UPGRADE_ISSUE: Unable to determine which constant to upgrade vbNormal to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
 		'UPGRADE_ISSUE: Screen property Screen.MousePointer does not support custom mousepointers. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="45116EAB-7060-405E-8ABE-9DBB40DC2E86"'
 		'UPGRADE_WARNING: Screen property Screen.MousePointer has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
-		System.Windows.Forms.Cursor.Current = vbNormal
+            System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
 		Me.fgrErrores.WordWrap = True
 		GoTo procFin
 		
@@ -146,7 +146,7 @@ procFin:
 		'UPGRADE_ISSUE: Unable to determine which constant to upgrade vbNormal to. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="B3B44E51-B5F1-4FD7-AA29-CAD31B71F487"'
 		'UPGRADE_ISSUE: Screen property Screen.MousePointer does not support custom mousepointers. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="45116EAB-7060-405E-8ABE-9DBB40DC2E86"'
 		'UPGRADE_WARNING: Screen property Screen.MousePointer has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
-		System.Windows.Forms.Cursor.Current = vbNormal
+            System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
 		
 	End Sub
 	Private Sub msCargarCombo()
@@ -206,7 +206,7 @@ procFin:
 		fgrErrores.CellForeColor = System.Drawing.Color.FromARGB(192, 0, 0) 'gintGranate
 		fgrErrores.CellFontName = "Arial"
 		fgrErrores.CellFontItalic = True
-		fgrErrores.set_TextMatrix(0, 2, "Descripción")
+		fgrErrores.set_TextMatrix(0, 2, "DescripciÃ³n")
 		Me.fgrErrores.set_ColAlignment(1, MSFlexGridLib.AlignmentSettings.flexAlignLeftTop)
 		Me.fgrErrores.set_ColAlignment(2, MSFlexGridLib.AlignmentSettings.flexAlignLeftTop)
 		
@@ -263,7 +263,7 @@ msformateargrid:
 								strBD = Mid(strBD, 1, InStr(1, strBD, ";"))
 								strBD = Mid(strBD, 1, Len(strBD) - 1)
 							End If
-							strServidor = ". También se ha volcado en " & strBD & " en el servidor " & strServidor
+							strServidor = ". TambiÃ©n se ha volcado en " & strBD & " en el servidor " & strServidor
 							strSQL = "UPDATE ERRORES SET DESCRIPCION='" & strServidor & "' WHERE PROCEDIMIENTO='" & rstError.Fields("PROCEDIMIENTO").Value & "' and USERID='" & strUserId & "'"
 							'**************************
 							mfExecute(conPasarela, strSQL)

@@ -77,11 +77,19 @@ Module basGeneral
 	
 	Public Declare Function GetDesktopWindow Lib "user32" () As Integer
 	Public Declare Function ShellExecute Lib "shell32.dll"  Alias "ShellExecuteA"(ByVal hWnd As Integer, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Integer) As Integer
-	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Public Declare Function GetPrivateProfileString Lib "kernel32"  Alias "GetPrivateProfileStringA"(ByVal lpApplicationName As String, ByVal lpKeyName As Any, ByVal lpDefault As String, ByVal lpReturnedString As String, ByVal lSize As Integer, ByVal lpFileName As String) As Integer
-	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	'UPGRADE_ISSUE: Declaring a parameter 'As Any' is not supported. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="FAE78A8D-8978-4FD4-8208-5B7324A8F795"'
-	Declare Function WritePrivateProfileString Lib "kernel32"  Alias "WritePrivateProfileStringA"(ByVal lpApplicationName As String, ByVal lpKeyName As Any, ByVal lpString As Any, ByVal lpFileName As String) As Integer
+        'Declaraciones para manejo de ficheros INI en VB.NET
+        Public Declare Ansi Function GetPrivateProfileString Lib "kernel32" Alias "GetPrivateProfileStringA"(
+            ByVal lpApplicationName As String,
+            ByVal lpKeyName As String,
+            ByVal lpDefault As String,
+            ByVal lpReturnedString As System.Text.StringBuilder,
+            ByVal nSize As Integer,
+            ByVal lpFileName As String) As Integer
+        Public Declare Ansi Function WritePrivateProfileString Lib "kernel32" Alias "WritePrivateProfileStringA"(
+            ByVal lpApplicationName As String,
+            ByVal lpKeyName As String,
+            ByVal lpString As String,
+            ByVal lpFileName As String) As Integer
 	'variable para saber si han dado a cancelar durante el proceso(aketza)
 	Public Declare Function GetSystemMenu Lib "user32" (ByVal hWnd As Integer, ByVal bRevert As Integer) As Integer
 	Public Declare Function DeleteMenu Lib "user32" (ByVal hMenu As Integer, ByVal nPosition As Integer, ByVal wFlags As Integer) As Integer
@@ -104,7 +112,7 @@ Module basGeneral
 		
 		On Error Resume Next
 		
-		Dim nFnum As Integer ' -- N˙mero para el fichero log
+		Dim nFnum As Integer ' -- N√∫mero para el fichero log
 		Dim cSource As String ' -- Cadena con el tipo de origen de error
 		
 		nFnum = FreeFile
@@ -115,14 +123,13 @@ Module basGeneral
 	End Function
 	
 	'Lectura de INI
-	Public Function ReadIniFile(ByVal strINIFile As String, ByVal strSection As String, ByVal strKey As String) As String
-		
-		Dim strBuffer As String
-		
-		strBuffer = Space(255)
-		If GetPrivateProfileString(strSection, strKey, vbNullString, strBuffer, gintMAX_SIZE, strINIFile) Then
-			ReadIniFile = StringFromBuffer(strBuffer)
-		End If
+        Public Function ReadIniFile(ByVal strINIFile As String, ByVal strSection As String, ByVal strKey As String) As String
+
+                Dim strBuffer As New System.Text.StringBuilder(255)
+
+                If GetPrivateProfileString(strSection, strKey, vbNullString, strBuffer, gintMAX_SIZE, strINIFile) <> 0 Then
+                        ReadIniFile = StringFromBuffer(strBuffer.ToString())
+                End If
 		
 	End Function
 	
@@ -240,7 +247,7 @@ procFin:
 		Dim posicion As Short
 		
 		'#### DS66 Busca texto en la SQL que lanza
-		If InStr(strSQL, "@LETPR_COMPROBACI”NDEUM01") <> 0 Then
+		If InStr(strSQL, "@LETPR_COMPROBACI√ìNDEUM01") <> 0 Then
 			System.Windows.Forms.Application.DoEvents()
 		End If
 		'####
@@ -513,7 +520,7 @@ procFin:
 			Case Is = "M"
 				Getvalue = "Mes(es)"
 			Case Is = "A"
-				Getvalue = "AÒo(s)"
+				Getvalue = "A√±o(s)"
 			Case Else
 				Getvalue = valor
 		End Select
@@ -619,12 +626,12 @@ procFin:
 	
 	Public Function SetPassword(ByVal P As String, Optional ByVal m As Object = 2) As String
 		'  /******************************************************************\
-		'  **   FunciÛn que se encarga de encriptar o desenciptar cadenas de texto
+		'  **   Funci√≥n que se encarga de encriptar o desenciptar cadenas de texto
 		'  **   P. Salida:
 		'  **             SetPassword: Cadena obtenida
-		'  **   Control Versiones: (VersiÛn, Nombre, fecha, modificaciÛn)
+		'  **   Control Versiones: (Versi√≥n, Nombre, fecha, modificaci√≥n)
 		'  **   ------------------------------------------------------------------------------------------
-		'  **    1.0    Igor Rementeria       19/04/2006       CreaciÛn de la funciÛn
+		'  **    1.0    Igor Rementeria       19/04/2006       Creaci√≥n de la funci√≥n
 		'  \******************************************************************/
 		
 		Dim r As Object
@@ -649,12 +656,12 @@ procFin:
 	
 	Public Function LeeTablaINI(ByRef Seccion As String, ByRef Clave As String) As String
 		'  /******************************************************************\
-		'  **   FunciÛn que se encarga de obtener un valor de la tabla INI
+		'  **   Funci√≥n que se encarga de obtener un valor de la tabla INI
 		'  **   P. Salida:
 		'  **             LeeTablaINI: valor
-		'  **   Control Versiones: (VersiÛn, Nombre, fecha, modificaciÛn)
+		'  **   Control Versiones: (Versi√≥n, Nombre, fecha, modificaci√≥n)
 		'  **   ------------------------------------------------------------------------------------------
-		'  **    1.0    Aketza Martinez       19/06/2006       CreaciÛn de la funciÛn
+		'  **    1.0    Aketza Martinez       19/06/2006       Creaci√≥n de la funci√≥n
 		'  \******************************************************************/
 		
 		Dim rst As ADODB.Recordset
@@ -680,7 +687,7 @@ procFin:
 		On Error GoTo Insertar_Error
 		
 		'#### DS66 Busca texto en la SQL que lanza
-		If InStr(strDescripcion, "no tiene par·metros") <> 0 Then
+		If InStr(strDescripcion, "no tiene par√°metros") <> 0 Then
 			System.Windows.Forms.Application.DoEvents()
 		End If
 		'####
@@ -715,7 +722,7 @@ Repetir:
 		If InStr(intPos, strTexto, " ") <> 0 Then
 			Do While intPos < Len(strTexto)
 				If Len(Trim(Mid(strTexto, intPos, intAux))) > 2 And InStr(1, Trim(Mid(strTexto, intPos, intAux)), " ") = 0 And (InStr(1, Trim(Mid(strTexto, intPos + 1)), " ") + Len(Mid(strTexto, 1, intPos))) > intPosAnt Then
-					'quitamos preposiciones, determinantes y dem·s palabras que no interesen
+					'quitamos preposiciones, determinantes y dem√°s palabras que no interesen
 					If Trim(Mid(strTexto, intPos, intAux)) <> "del" And Trim(Mid(strTexto, intPos, intAux)) <> "con" And Trim(Mid(strTexto, intPos, intAux)) <> "por" And Trim(Mid(strTexto, intPos, intAux)) <> "sin" And Trim(Mid(strTexto, intPos, intAux)) <> "las" And Trim(Mid(strTexto, intPos, intAux)) <> "los" Then
 						strAux = strAux & Trim(Mid(strTexto, intPos, intAux))
 					End If
@@ -741,7 +748,7 @@ Repetir:
 		strAux = Replace(strAux, "/", "")
 		strAux = Replace(strAux, "(", "")
 		strAux = Replace(strAux, ")", "")
-		'Inicio Jonathan Prieto 31/01/2011: Que no devuelva m·s de 24 caracteres, para que el valor despuÈs no pase de 25.
+		'Inicio Jonathan Prieto 31/01/2011: Que no devuelva m√°s de 24 caracteres, para que el valor despu√©s no pase de 25.
 		If Len(strAux) > 24 Then
 			strAux = Mid(strAux, 1, 24)
 		End If
@@ -753,46 +760,46 @@ Repetir:
 	End Function
 	Public Function QuitarAcentos(ByRef strTexto As String) As String
 		
-		strTexto = Replace(strTexto, "·", "a")
-		strTexto = Replace(strTexto, "È", "e")
-		strTexto = Replace(strTexto, "Ì", "i")
-		strTexto = Replace(strTexto, "Û", "o")
-		strTexto = Replace(strTexto, "˙", "u")
-		strTexto = Replace(strTexto, "‡", "a")
-		strTexto = Replace(strTexto, "Ë", "e")
-		strTexto = Replace(strTexto, "Ï", "i")
-		strTexto = Replace(strTexto, "Ú", "o")
-		strTexto = Replace(strTexto, "˘", "u")
-		strTexto = Replace(strTexto, "‰", "a")
-		strTexto = Replace(strTexto, "Î", "e")
-		strTexto = Replace(strTexto, "Ô", "i")
-		strTexto = Replace(strTexto, "ˆ", "o")
-		strTexto = Replace(strTexto, "¸", "u")
-		strTexto = Replace(strTexto, "‚", "a")
-		strTexto = Replace(strTexto, "Í", "e")
-		strTexto = Replace(strTexto, "Ó", "i")
-		strTexto = Replace(strTexto, "Ù", "o")
-		strTexto = Replace(strTexto, "˚", "u")
-		strTexto = Replace(strTexto, "¡", "a")
-		strTexto = Replace(strTexto, "…", "e")
-		strTexto = Replace(strTexto, "Õ", "i")
-		strTexto = Replace(strTexto, "”", "o")
-		strTexto = Replace(strTexto, "⁄", "u")
-		strTexto = Replace(strTexto, "¿", "a")
-		strTexto = Replace(strTexto, "»", "e")
-		strTexto = Replace(strTexto, "Ã", "i")
-		strTexto = Replace(strTexto, "“", "o")
-		strTexto = Replace(strTexto, "Ÿ", "u")
-		strTexto = Replace(strTexto, "ƒ", "a")
-		strTexto = Replace(strTexto, "À", "e")
-		strTexto = Replace(strTexto, "œ", "i")
-		strTexto = Replace(strTexto, "÷", "o")
-		strTexto = Replace(strTexto, "‹", "u")
-		strTexto = Replace(strTexto, "¬", "a")
-		strTexto = Replace(strTexto, " ", "e")
-		strTexto = Replace(strTexto, "Œ", "i")
-		strTexto = Replace(strTexto, "‘", "o")
-		strTexto = Replace(strTexto, "€", "u")
+		strTexto = Replace(strTexto, "√°", "a")
+		strTexto = Replace(strTexto, "√©", "e")
+		strTexto = Replace(strTexto, "√≠", "i")
+		strTexto = Replace(strTexto, "√≥", "o")
+		strTexto = Replace(strTexto, "√∫", "u")
+		strTexto = Replace(strTexto, "√†", "a")
+		strTexto = Replace(strTexto, "√®", "e")
+		strTexto = Replace(strTexto, "√¨", "i")
+		strTexto = Replace(strTexto, "√≤", "o")
+		strTexto = Replace(strTexto, "√π", "u")
+		strTexto = Replace(strTexto, "√§", "a")
+		strTexto = Replace(strTexto, "√´", "e")
+		strTexto = Replace(strTexto, "√Ø", "i")
+		strTexto = Replace(strTexto, "√∂", "o")
+		strTexto = Replace(strTexto, "√º", "u")
+		strTexto = Replace(strTexto, "√¢", "a")
+		strTexto = Replace(strTexto, "√™", "e")
+		strTexto = Replace(strTexto, "√Æ", "i")
+		strTexto = Replace(strTexto, "√¥", "o")
+		strTexto = Replace(strTexto, "√ª", "u")
+		strTexto = Replace(strTexto, "√Å", "a")
+		strTexto = Replace(strTexto, "√â", "e")
+		strTexto = Replace(strTexto, "√ç", "i")
+		strTexto = Replace(strTexto, "√ì", "o")
+		strTexto = Replace(strTexto, "√ö", "u")
+		strTexto = Replace(strTexto, "√Ä", "a")
+		strTexto = Replace(strTexto, "√à", "e")
+		strTexto = Replace(strTexto, "√å", "i")
+		strTexto = Replace(strTexto, "√í", "o")
+		strTexto = Replace(strTexto, "√ô", "u")
+		strTexto = Replace(strTexto, "√Ñ", "a")
+		strTexto = Replace(strTexto, "√ã", "e")
+		strTexto = Replace(strTexto, "√è", "i")
+		strTexto = Replace(strTexto, "√ñ", "o")
+		strTexto = Replace(strTexto, "√ú", "u")
+		strTexto = Replace(strTexto, "√Ç", "a")
+		strTexto = Replace(strTexto, "√ä", "e")
+		strTexto = Replace(strTexto, "√é", "i")
+		strTexto = Replace(strTexto, "√î", "o")
+		strTexto = Replace(strTexto, "√õ", "u")
 		QuitarAcentos = strTexto
 		
 	End Function
@@ -950,14 +957,14 @@ procErr:
 	
 	Public Function fObtenerCodigoTramiteUsuario(ByVal pstrModelo As String) As Integer
 		'   /******************************************************************\
-		'   **  Obtiene el cÛdigo del Tr·mite Usuario para el modelo informado
-		'   **  Par·metros Entrada:
+		'   **  Obtiene el c√≥digo del Tr√°mite Usuario para el modelo informado
+		'   **  Par√°metros Entrada:
 		'           pstrModelo: Modelo de Corporate seleccionado
-		'   **  Par·metros Salida:
-		'   **      String: CÛdigo del Tr·mite Usuario (LU_ID) de la tabla CW_LOOKUP de la bbdd Corporate
-		'   **  Control Versiones: (VersiÛn, Nombre, fecha, modificaciÛn)
+		'   **  Par√°metros Salida:
+		'   **      String: C√≥digo del Tr√°mite Usuario (LU_ID) de la tabla CW_LOOKUP de la bbdd Corporate
+		'   **  Control Versiones: (Versi√≥n, Nombre, fecha, modificaci√≥n)
 		'   **  ------------------------------------------------------------------------------------------
-		'   **  1.0     J. Prieto   16/05/2013  CreaciÛn de la funciÛn
+		'   **  1.0     J. Prieto   16/05/2013  Creaci√≥n de la funci√≥n
 		'   \******************************************************************/
 		
 		On Error GoTo Err_fObtenerCodigoTramiteUsuario
@@ -967,7 +974,7 @@ procErr:
 		Dim strCodTramUsu As String
 		
 		Const strTramUsu As String = "TRU"
-		Const strTramUsuDesc As String = "%TR¡MITE%USUARIO%"
+		Const strTramUsuDesc As String = "%TR√ÅMITE%USUARIO%"
 		
 		If Trim(pstrModelo) = vbNullString Then
 			GoTo Err_fObtenerCodigoTramiteUsuario
@@ -987,7 +994,7 @@ procErr:
 		
 Err_fObtenerCodigoTramiteUsuario: 
 		strCodTramUsu = vbNullString
-		logError("fObtenerCodigoTramiteUsuario: No se ha podido obtener el cÛdigo del Tr·mite Usuario. -" & Err.Description)
+		logError("fObtenerCodigoTramiteUsuario: No se ha podido obtener el c√≥digo del Tr√°mite Usuario. -" & Err.Description)
 		
 Fin_fObtenerCodigoTramiteUsuario: 
 		fObtenerCodigoTramiteUsuario = CInt(strCodTramUsu)
