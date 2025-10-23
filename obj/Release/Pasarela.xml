@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Pasarela
+</name>
+</assembly>
+<members>
+<member name="F:Pasarela.basGeneral.INIFile">
+FICHERO INI
+
+</member><member name="F:Pasarela.basGeneral.conSqlServer">
+DECLARACION DE CONEXIONES
+
+</member>
+</members>
+</doc>
