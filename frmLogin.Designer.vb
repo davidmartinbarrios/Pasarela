@@ -9,8 +9,8 @@
 		' functionality of automatically
 		' loading and showing an MDI
 		' child's parent.
-		Me.MDIParent = Pasarela.frmMDI
-		Pasarela.frmMDI.Show
+		Me.MDIParent = PasarelaT0NET.frmMDI
+		PasarelaT0NET.frmMDI.Show
 	End Sub
 	'Form overrides dispose to clean up the component list.
 	<System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
@@ -175,7 +175,7 @@
 		Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.Label1.Name = "Label1"
 		Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight
-		Me.Label2.Text = "Contraseña:"
+		Me.Label2.Text = "ContraseÃ±a:"
 		Me.Label2.Font = New System.Drawing.Font("Arial", 9!, System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label2.Size = New System.Drawing.Size(77, 17)
 		Me.Label2.Location = New System.Drawing.Point(61, 97)

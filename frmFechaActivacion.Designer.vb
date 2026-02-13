@@ -9,8 +9,8 @@
 		' functionality of automatically
 		' loading and showing an MDI
 		' child's parent.
-		Me.MDIParent = Pasarela.frmMDI
-		Pasarela.frmMDI.Show
+		Me.MDIParent = PasarelaT0NET.frmMDI
+		PasarelaT0NET.frmMDI.Show
 	End Sub
 	'Form overrides dispose to clean up the component list.
 	<System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
@@ -100,7 +100,7 @@
 		Me.cmdCalendar.TabStop = True
 		Me.cmdCalendar.Name = "cmdCalendar"
 		Me._optProg_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me._optProg_1.Text = "Programar ejecución"
+		Me._optProg_1.Text = "Programar ejecuciÃ³n"
 		Me._optProg_1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me._optProg_1.Size = New System.Drawing.Size(205, 25)
 		Me._optProg_1.Location = New System.Drawing.Point(56, 44)

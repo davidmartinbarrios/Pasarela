@@ -9,8 +9,8 @@
 		' functionality of automatically
 		' loading and showing an MDI
 		' child's parent.
-		Me.MDIParent = Pasarela.frmMDI
-		Pasarela.frmMDI.Show
+		Me.MDIParent = PasarelaT0NET.frmMDI
+		PasarelaT0NET.frmMDI.Show
 	End Sub
 	'Form overrides dispose to clean up the component list.
 	<System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
@@ -156,7 +156,7 @@
 		Me.CmdBuscar.Location = New System.Drawing.Point(364, 108)
 		Me.CmdBuscar.Image = CType(resources.GetObject("CmdBuscar.Image"), System.Drawing.Image)
 		Me.CmdBuscar.TabIndex = 0
-		Me.ToolTip1.SetToolTip(Me.CmdBuscar, "Generar cadena de conexión de proyecto")
+		Me.ToolTip1.SetToolTip(Me.CmdBuscar, "Generar cadena de conexiÃ³n de proyecto")
 		Me.CmdBuscar.BackColor = System.Drawing.SystemColors.Control
 		Me.CmdBuscar.CausesValidation = True
 		Me.CmdBuscar.Enabled = True
