@@ -7,9 +7,9 @@
     <ProjectGuid>{A7D3B600-FAEE-49B9-95C4-7580C787DF98}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <AssemblyName>Pasarela</AssemblyName>
+    <AssemblyName>PasarelaT0NET</AssemblyName>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Pasarela.frmLogin</StartupObject>
+    <StartupObject>PasarelaT0NET.frmLogin</StartupObject>
     <AssemblyMajorVersion>6</AssemblyMajorVersion>
     <AssemblyMinorVersion>14</AssemblyMinorVersion>
     <AssemblyRevisionNumber>0</AssemblyRevisionNumber>
@@ -17,7 +17,7 @@
     <AssemblyCompanyName>SERDOMI</AssemblyCompanyName>
     <StartWithIE>False</StartWithIE>
     <ApplicationIcon>Pasarela.ico</ApplicationIcon>
-    <RootNamespace>Pasarela</RootNamespace>
+    <RootNamespace>PasarelaT0NET</RootNamespace>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -27,7 +27,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>.\bin\</OutputPath>
-    <DocumentationFile>Pasarela.xml</DocumentationFile>
+    <DocumentationFile>PasarelaT0NET.xml</DocumentationFile>
     <DebugSymbols>True</DebugSymbols>
     <DefineDebug>True</DefineDebug>
     <DefineTrace>True</DefineTrace>
@@ -38,7 +38,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>.\bin\</OutputPath>
-    <DocumentationFile>Pasarela.xml</DocumentationFile>
+    <DocumentationFile>PasarelaT0NET.xml</DocumentationFile>
     <DebugSymbols>False</DebugSymbols>
     <DefineDebug>False</DefineDebug>
     <DefineTrace>True</DefineTrace>

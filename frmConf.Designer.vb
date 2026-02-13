@@ -9,8 +9,8 @@
 		' functionality of automatically
 		' loading and showing an MDI
 		' child's parent.
-		Me.MDIParent = Pasarela.frmMDI
-		Pasarela.frmMDI.Show
+		Me.MDIParent = PasarelaT0NET.frmMDI
+		PasarelaT0NET.frmMDI.Show
 	End Sub
 	'Form overrides dispose to clean up the component list.
 	<System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
@@ -90,7 +90,7 @@
 		Me.SuspendLayout()
 		Me.ToolTip1.Active = True
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-		Me.Text = "Pasarela Corporate Modeler - HidraNet - CONFIGURACI覰 PROCEDIMIENTOS"
+		Me.Text = "Pasarela Corporate Modeler - HidraNet - CONFIGURACI脫N PROCEDIMIENTOS"
 		Me.ClientSize = New System.Drawing.Size(719, 456)
 		Me.Location = New System.Drawing.Point(-25, 7)
 		Me.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -139,13 +139,13 @@
 		Me._lstProc_ColumnHeader_1.Width = 0
 		Me._lstProc_ColumnHeader_2.Text = "Nombre"
 		Me._lstProc_ColumnHeader_2.Width = 412
-		Me._lstProc_ColumnHeader_3.Text = "Activaci髇"
+		Me._lstProc_ColumnHeader_3.Text = "Activaci贸n"
 		Me._lstProc_ColumnHeader_3.Width = 118
-		Me._lstProc_ColumnHeader_4.Text = "Nueva versi髇"
+		Me._lstProc_ColumnHeader_4.Text = "Nueva versi贸n"
 		Me._lstProc_ColumnHeader_4.Width = 147
 		Me._lstProc_ColumnHeader_5.Text = "BBDD"
 		Me._lstProc_ColumnHeader_5.Width = 118
-		Me._lstProc_ColumnHeader_6.Text = "Conexi髇"
+		Me._lstProc_ColumnHeader_6.Text = "Conexi贸n"
 		Me._lstProc_ColumnHeader_6.Width = 824
 		Me._lstProc_ColumnHeader_7.Text = "Observaciones"
 		Me._lstProc_ColumnHeader_7.Width = 170
@@ -216,7 +216,7 @@
 		Me.cmdCadenaConexion2.Location = New System.Drawing.Point(668, 128)
 		Me.cmdCadenaConexion2.Image = CType(resources.GetObject("cmdCadenaConexion2.Image"), System.Drawing.Image)
 		Me.cmdCadenaConexion2.TabIndex = 16
-		Me.ToolTip1.SetToolTip(Me.cmdCadenaConexion2, "Generar cadena de conexi髇 de proyecto")
+		Me.ToolTip1.SetToolTip(Me.cmdCadenaConexion2, "Generar cadena de conexi贸n de proyecto")
 		Me.cmdCadenaConexion2.Visible = False
 		Me.cmdCadenaConexion2.BackColor = System.Drawing.SystemColors.Control
 		Me.cmdCadenaConexion2.CausesValidation = True
@@ -260,7 +260,7 @@
 		Me.CmdSqlStringDB2.Location = New System.Drawing.Point(668, 80)
 		Me.CmdSqlStringDB2.Image = CType(resources.GetObject("CmdSqlStringDB2.Image"), System.Drawing.Image)
 		Me.CmdSqlStringDB2.TabIndex = 9
-		Me.ToolTip1.SetToolTip(Me.CmdSqlStringDB2, "Generar cadena de conexi髇 de proyecto")
+		Me.ToolTip1.SetToolTip(Me.CmdSqlStringDB2, "Generar cadena de conexi贸n de proyecto")
 		Me.CmdSqlStringDB2.Visible = False
 		Me.CmdSqlStringDB2.BackColor = System.Drawing.SystemColors.Control
 		Me.CmdSqlStringDB2.CausesValidation = True
@@ -304,7 +304,7 @@
 		Me.cmdCalendar.RightToLeft = System.Windows.Forms.RightToLeft.No
 		Me.cmdCalendar.TabStop = True
 		Me.cmdCalendar.Name = "cmdCalendar"
-		Me.chkNuevaVersion.Text = "Activar nueva Versi髇"
+		Me.chkNuevaVersion.Text = "Activar nueva Versi贸n"
 		Me.chkNuevaVersion.Size = New System.Drawing.Size(141, 19)
 		Me.chkNuevaVersion.Location = New System.Drawing.Point(212, 16)
 		Me.chkNuevaVersion.TabIndex = 2
@@ -381,7 +381,7 @@
 		Me.Label3.AutoSize = False
 		Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.Label3.Name = "Label3"
-		Me.Label1.Text = "Cadena Conexi髇:"
+		Me.Label1.Text = "Cadena Conexi贸n:"
 		Me.Label1.Size = New System.Drawing.Size(91, 17)
 		Me.Label1.Location = New System.Drawing.Point(6, 80)
 		Me.Label1.TabIndex = 8
@@ -411,7 +411,7 @@
 		Me.lblComen.AutoSize = False
 		Me.lblComen.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.lblComen.Name = "lblComen"
-		Me.lblFecha.Text = "Fecha Activaci髇:"
+		Me.lblFecha.Text = "Fecha Activaci贸n:"
 		Me.lblFecha.Size = New System.Drawing.Size(91, 17)
 		Me.lblFecha.Location = New System.Drawing.Point(6, 16)
 		Me.lblFecha.TabIndex = 5

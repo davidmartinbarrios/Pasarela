@@ -9,8 +9,8 @@
 		' functionality of automatically
 		' loading and showing an MDI
 		' child's parent.
-		Me.MDIParent = Pasarela.frmMDI
-		Pasarela.frmMDI.Show
+		Me.MDIParent = PasarelaT0NET.frmMDI
+		PasarelaT0NET.frmMDI.Show
 	End Sub
 	'Form overrides dispose to clean up the component list.
 	<System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)

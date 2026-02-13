@@ -9,8 +9,8 @@
 		' functionality of automatically
 		' loading and showing an MDI
 		' child's parent.
-		Me.MDIParent = Pasarela.frmMDI
-		Pasarela.frmMDI.Show
+		Me.MDIParent = PasarelaT0NET.frmMDI
+		PasarelaT0NET.frmMDI.Show
 	End Sub
 	'Form overrides dispose to clean up the component list.
 	<System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
@@ -95,7 +95,7 @@
 		Me.ToolTip1.Active = True
 		CType(Me.Label7, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-		Me.Text = "Conexi髇 a Base de Datos"
+		Me.Text = "Conexi贸n a Base de Datos"
 		Me.ClientSize = New System.Drawing.Size(685, 494)
 		Me.Location = New System.Drawing.Point(0, 0)
 		Me.Icon = CType(resources.GetObject("frmConexion.Icon"), System.Drawing.Icon)
@@ -140,7 +140,7 @@
 		Me.CmdSqlStringInfrT0.Location = New System.Drawing.Point(648, 416)
 		Me.CmdSqlStringInfrT0.Image = CType(resources.GetObject("CmdSqlStringInfrT0.Image"), System.Drawing.Image)
 		Me.CmdSqlStringInfrT0.TabIndex = 27
-		Me.ToolTip1.SetToolTip(Me.CmdSqlStringInfrT0, "Generar cadena de conexi髇 de proyecto")
+		Me.ToolTip1.SetToolTip(Me.CmdSqlStringInfrT0, "Generar cadena de conexi贸n de proyecto")
 		Me.CmdSqlStringInfrT0.BackColor = System.Drawing.SystemColors.Control
 		Me.CmdSqlStringInfrT0.CausesValidation = True
 		Me.CmdSqlStringInfrT0.Enabled = True
@@ -154,7 +154,7 @@
 		Me.CmdSqlStringDocu.Location = New System.Drawing.Point(646, 320)
 		Me.CmdSqlStringDocu.Image = CType(resources.GetObject("CmdSqlStringDocu.Image"), System.Drawing.Image)
 		Me.CmdSqlStringDocu.TabIndex = 24
-		Me.ToolTip1.SetToolTip(Me.CmdSqlStringDocu, "Generar cadena de conexi髇 de proyecto")
+		Me.ToolTip1.SetToolTip(Me.CmdSqlStringDocu, "Generar cadena de conexi贸n de proyecto")
 		Me.CmdSqlStringDocu.BackColor = System.Drawing.SystemColors.Control
 		Me.CmdSqlStringDocu.CausesValidation = True
 		Me.CmdSqlStringDocu.Enabled = True
@@ -190,7 +190,7 @@
 		Me.CmdSqlStringGene.Location = New System.Drawing.Point(646, 122)
 		Me.CmdSqlStringGene.Image = CType(resources.GetObject("CmdSqlStringGene.Image"), System.Drawing.Image)
 		Me.CmdSqlStringGene.TabIndex = 21
-		Me.ToolTip1.SetToolTip(Me.CmdSqlStringGene, "Generar cadena de conexi髇 de proyecto")
+		Me.ToolTip1.SetToolTip(Me.CmdSqlStringGene, "Generar cadena de conexi贸n de proyecto")
 		Me.CmdSqlStringGene.BackColor = System.Drawing.SystemColors.Control
 		Me.CmdSqlStringGene.CausesValidation = True
 		Me.CmdSqlStringGene.Enabled = True
@@ -248,7 +248,7 @@
 		Me.CmdSqlStringMsj.Location = New System.Drawing.Point(646, 370)
 		Me.CmdSqlStringMsj.Image = CType(resources.GetObject("CmdSqlStringMsj.Image"), System.Drawing.Image)
 		Me.CmdSqlStringMsj.TabIndex = 17
-		Me.ToolTip1.SetToolTip(Me.CmdSqlStringMsj, "Generar cadena de conexi髇 de proyecto")
+		Me.ToolTip1.SetToolTip(Me.CmdSqlStringMsj, "Generar cadena de conexi贸n de proyecto")
 		Me.CmdSqlStringMsj.BackColor = System.Drawing.SystemColors.Control
 		Me.CmdSqlStringMsj.CausesValidation = True
 		Me.CmdSqlStringMsj.Enabled = True
@@ -372,7 +372,7 @@
 		Me.CmdSqlStringGes.Location = New System.Drawing.Point(646, 222)
 		Me.CmdSqlStringGes.Image = CType(resources.GetObject("CmdSqlStringGes.Image"), System.Drawing.Image)
 		Me.CmdSqlStringGes.TabIndex = 9
-		Me.ToolTip1.SetToolTip(Me.CmdSqlStringGes, "Generar cadena de conexi髇 de proyecto")
+		Me.ToolTip1.SetToolTip(Me.CmdSqlStringGes, "Generar cadena de conexi贸n de proyecto")
 		Me.CmdSqlStringGes.BackColor = System.Drawing.SystemColors.Control
 		Me.CmdSqlStringGes.CausesValidation = True
 		Me.CmdSqlStringGes.Enabled = True
@@ -386,7 +386,7 @@
 		Me.CmdSqlStringWord.Location = New System.Drawing.Point(646, 272)
 		Me.CmdSqlStringWord.Image = CType(resources.GetObject("CmdSqlStringWord.Image"), System.Drawing.Image)
 		Me.CmdSqlStringWord.TabIndex = 8
-		Me.ToolTip1.SetToolTip(Me.CmdSqlStringWord, "Generar cadena de conexi髇 de proyecto")
+		Me.ToolTip1.SetToolTip(Me.CmdSqlStringWord, "Generar cadena de conexi贸n de proyecto")
 		Me.CmdSqlStringWord.BackColor = System.Drawing.SystemColors.Control
 		Me.CmdSqlStringWord.CausesValidation = True
 		Me.CmdSqlStringWord.Enabled = True
@@ -400,7 +400,7 @@
 		Me.CmdSqlStringHid.Location = New System.Drawing.Point(646, 172)
 		Me.CmdSqlStringHid.Image = CType(resources.GetObject("CmdSqlStringHid.Image"), System.Drawing.Image)
 		Me.CmdSqlStringHid.TabIndex = 7
-		Me.ToolTip1.SetToolTip(Me.CmdSqlStringHid, "Generar cadena de conexi髇 de proyecto")
+		Me.ToolTip1.SetToolTip(Me.CmdSqlStringHid, "Generar cadena de conexi贸n de proyecto")
 		Me.CmdSqlStringHid.BackColor = System.Drawing.SystemColors.Control
 		Me.CmdSqlStringHid.CausesValidation = True
 		Me.CmdSqlStringHid.Enabled = True
@@ -414,7 +414,7 @@
 		Me.CmdSqlStringInf.Location = New System.Drawing.Point(646, 72)
 		Me.CmdSqlStringInf.Image = CType(resources.GetObject("CmdSqlStringInf.Image"), System.Drawing.Image)
 		Me.CmdSqlStringInf.TabIndex = 5
-		Me.ToolTip1.SetToolTip(Me.CmdSqlStringInf, "Generar cadena de conexi髇 de proyecto")
+		Me.ToolTip1.SetToolTip(Me.CmdSqlStringInf, "Generar cadena de conexi贸n de proyecto")
 		Me.CmdSqlStringInf.BackColor = System.Drawing.SystemColors.Control
 		Me.CmdSqlStringInf.CausesValidation = True
 		Me.CmdSqlStringInf.Enabled = True
@@ -428,7 +428,7 @@
 		Me.CmdSqlStringDB2.Location = New System.Drawing.Point(646, 22)
 		Me.CmdSqlStringDB2.Image = CType(resources.GetObject("CmdSqlStringDB2.Image"), System.Drawing.Image)
 		Me.CmdSqlStringDB2.TabIndex = 3
-		Me.ToolTip1.SetToolTip(Me.CmdSqlStringDB2, "Generar cadena de conexi髇 de proyecto")
+		Me.ToolTip1.SetToolTip(Me.CmdSqlStringDB2, "Generar cadena de conexi贸n de proyecto")
 		Me.CmdSqlStringDB2.BackColor = System.Drawing.SystemColors.Control
 		Me.CmdSqlStringDB2.CausesValidation = True
 		Me.CmdSqlStringDB2.Enabled = True
@@ -465,7 +465,7 @@
 		Me.cmdCancelar.RightToLeft = System.Windows.Forms.RightToLeft.No
 		Me.cmdCancelar.TabStop = True
 		Me.cmdCancelar.Name = "cmdCancelar"
-		Me._Label7_1.Text = "Cadena de Conexi髇 a INFR"
+		Me._Label7_1.Text = "Cadena de Conexi贸n a INFR"
 		Me._Label7_1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me._Label7_1.Size = New System.Drawing.Size(307, 17)
 		Me._Label7_1.Location = New System.Drawing.Point(6, 400)
@@ -481,7 +481,7 @@
 		Me._Label7_1.AutoSize = False
 		Me._Label7_1.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me._Label7_1.Name = "_Label7_1"
-		Me.Label1.Text = "Cadena de Conexi髇 a Acciones de DOCU"
+		Me.Label1.Text = "Cadena de Conexi贸n a Acciones de DOCU"
 		Me.Label1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.Size = New System.Drawing.Size(307, 17)
 		Me.Label1.Location = New System.Drawing.Point(0, 304)
@@ -497,7 +497,7 @@
 		Me.Label1.AutoSize = False
 		Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.Label1.Name = "Label1"
-		Me.Label8.Text = "Cadena de Conexi髇 a Acciones Generales"
+		Me.Label8.Text = "Cadena de Conexi贸n a Acciones Generales"
 		Me.Label8.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label8.Size = New System.Drawing.Size(307, 17)
 		Me.Label8.Location = New System.Drawing.Point(6, 106)
@@ -513,7 +513,7 @@
 		Me.Label8.AutoSize = False
 		Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.Label8.Name = "Label8"
-		Me._Label7_0.Text = "Cadena de Conexi髇 a Acciones de Mensajes"
+		Me._Label7_0.Text = "Cadena de Conexi贸n a Acciones de Mensajes"
 		Me._Label7_0.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me._Label7_0.Size = New System.Drawing.Size(307, 17)
 		Me._Label7_0.Location = New System.Drawing.Point(6, 354)
@@ -529,7 +529,7 @@
 		Me._Label7_0.AutoSize = False
 		Me._Label7_0.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me._Label7_0.Name = "_Label7_0"
-		Me.Label6.Text = "Cadena de Conexi髇 a Acciones de Gesti髇"
+		Me.Label6.Text = "Cadena de Conexi贸n a Acciones de Gesti贸n"
 		Me.Label6.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label6.Size = New System.Drawing.Size(215, 17)
 		Me.Label6.Location = New System.Drawing.Point(6, 206)
@@ -545,7 +545,7 @@
 		Me.Label6.AutoSize = False
 		Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.Label6.Name = "Label6"
-		Me.Label5.Text = "Cadena de Conexi髇 a Acciones de Word"
+		Me.Label5.Text = "Cadena de Conexi贸n a Acciones de Word"
 		Me.Label5.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label5.Size = New System.Drawing.Size(307, 17)
 		Me.Label5.Location = New System.Drawing.Point(6, 256)
@@ -561,7 +561,7 @@
 		Me.Label5.AutoSize = False
 		Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.Label5.Name = "Label5"
-		Me.Label4.Text = "Cadena de Conexi髇 Acciones Especificas"
+		Me.Label4.Text = "Cadena de Conexi贸n Acciones Especificas"
 		Me.Label4.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label4.Size = New System.Drawing.Size(307, 17)
 		Me.Label4.Location = New System.Drawing.Point(6, 156)
@@ -577,7 +577,7 @@
 		Me.Label4.AutoSize = False
 		Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.Label4.Name = "Label4"
-		Me.Label3.Text = "Cadena de Conexi髇 General Aplicaci髇"
+		Me.Label3.Text = "Cadena de Conexi贸n General Aplicaci贸n"
 		Me.Label3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label3.Size = New System.Drawing.Size(215, 17)
 		Me.Label3.Location = New System.Drawing.Point(6, 56)
@@ -593,7 +593,7 @@
 		Me.Label3.AutoSize = False
 		Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.Label3.Name = "Label3"
-		Me.Label2.Text = "Cadena de Conexi髇 a DB2"
+		Me.Label2.Text = "Cadena de Conexi贸n a DB2"
 		Me.Label2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label2.Size = New System.Drawing.Size(243, 17)
 		Me.Label2.Location = New System.Drawing.Point(6, 6)

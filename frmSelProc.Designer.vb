@@ -9,8 +9,8 @@
 		' functionality of automatically
 		' loading and showing an MDI
 		' child's parent.
-		Me.MDIParent = Pasarela.frmMDI
-		Pasarela.frmMDI.Show
+		Me.MDIParent = PasarelaT0NET.frmMDI
+		PasarelaT0NET.frmMDI.Show
 	End Sub
 	'Form overrides dispose to clean up the component list.
 	<System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
@@ -58,7 +58,7 @@
 		CType(Me.fgrProcs, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.Label1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-		Me.Text = "Selección de Procedimiento"
+		Me.Text = "SelecciÃ³n de Procedimiento"
 		Me.ClientSize = New System.Drawing.Size(619, 553)
 		Me.Location = New System.Drawing.Point(0, 0)
 		Me.Icon = CType(resources.GetObject("frmSelProc.Icon"), System.Drawing.Icon)
@@ -120,7 +120,7 @@
 		Me.cmdCancelar.RightToLeft = System.Windows.Forms.RightToLeft.No
 		Me.cmdCancelar.TabStop = True
 		Me.cmdCancelar.Name = "cmdCancelar"
-		Me.chkRamif.Text = "Buscar por ramificación"
+		Me.chkRamif.Text = "Buscar por ramificaciÃ³n"
 		Me.chkRamif.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.chkRamif.Size = New System.Drawing.Size(145, 23)
 		Me.chkRamif.Location = New System.Drawing.Point(10, 8)
